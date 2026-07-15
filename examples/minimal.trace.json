@@ -1,0 +1,5 @@
+{
+  "traceEvents": [
+    { "name": "task", "cat": "work", "ph": "X", "pid": 0, "tid": 0, "ts": 0, "dur": 100 }
+  ]
+}

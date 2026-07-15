@@ -133,6 +133,9 @@ other than the three listed above.
 
 ## Minimal valid example
 
+A single complete (`X`) slice on one track.
+[`examples/minimal.trace.json`](../examples/minimal.trace.json):
+
 ```json
 {
   "traceEvents": [
@@ -141,7 +144,14 @@ other than the three listed above.
 }
 ```
 
+Rendered:
+
+![Minimal example rendered](format_minimal.png)
+
 ## Fuller example
+
+Two tracks in one process, a nested `B`/`E` pair, and a slice on a second
+track. [`examples/fuller.trace.json`](../examples/fuller.trace.json):
 
 ```json
 {
@@ -160,6 +170,12 @@ other than the three listed above.
   ]
 }
 ```
+
+Rendered. Note the `layout` `B`/`E` pair becomes a single slice, stacked on a
+sub-row beneath `frame` because they overlap in time; the two threads appear as
+separate tracks ordered by `thread_sort_index`:
+
+![Fuller example rendered](format_fuller.png)
 
 ## Reference
 

@@ -1,0 +1,15 @@
+{
+  "displayTimeUnit": "ms",
+  "traceEvents": [
+    { "name": "process_name",      "ph": "M", "pid": 0,          "args": { "name": "renderer" } },
+    { "name": "thread_name",       "ph": "M", "pid": 0, "tid": 0, "args": { "name": "main" } },
+    { "name": "thread_sort_index", "ph": "M", "pid": 0, "tid": 0, "args": { "sort_index": 0 } },
+    { "name": "thread_name",       "ph": "M", "pid": 0, "tid": 1, "args": { "name": "compositor" } },
+    { "name": "thread_sort_index", "ph": "M", "pid": 0, "tid": 1, "args": { "sort_index": 1 } },
+
+    { "name": "frame",  "cat": "render", "ph": "X", "pid": 0, "tid": 0, "ts": 0,    "dur": 16000, "args": { "frame": 1 } },
+    { "name": "layout", "cat": "render", "ph": "B", "pid": 0, "tid": 0, "ts": 1000 },
+    { "name": "layout", "cat": "render", "ph": "E", "pid": 0, "tid": 0, "ts": 4000 },
+    { "name": "commit", "cat": "gpu",    "ph": "X", "pid": 0, "tid": 1, "ts": 15000, "dur": 900 }
+  ]
+}

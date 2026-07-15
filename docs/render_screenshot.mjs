@@ -61,9 +61,12 @@ const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${theme}${
   <script>${js}</script>
 </body></html>`;
 
+const width = Number(process.env.ST_W || 1200);
+const height = Number(process.env.ST_H || 720);
+
 const browser = await chromium.launch();
 const page = await browser.newPage({
-  viewport: { width: 1200, height: 720 },
+  viewport: { width, height },
   deviceScaleFactor: 2,
 });
 await page.setContent(html, { waitUntil: "load" });
