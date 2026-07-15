@@ -126,6 +126,9 @@ microseconds (the Chrome-trace convention). The following event types are used:
 
 Other event phases (instant, counter, flow) are currently ignored.
 
+For the precise, field-by-field definition of what Simple Trace reads, see
+[docs/TRACE_FORMAT.md](docs/TRACE_FORMAT.md).
+
 ## Development and releasing
 
 Continuous integration and releases are automated with GitHub Actions:
