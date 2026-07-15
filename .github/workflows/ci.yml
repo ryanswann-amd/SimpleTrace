@@ -1,0 +1,37 @@
+name: CI
+
+# Sanity-checks the extension on every push / PR: validates that the
+# manifest and JS parse, and that it packages cleanly into a .vsix.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Syntax check
+        run: |
+          node -c extension.js
+          node -c media/viewer.js
+          node -e "JSON.parse(require('fs').readFileSync('package.json','utf8'))"
+
+      - name: Install vsce
+        run: npm install -g @vscode/vsce
+
+      - name: Package (dry run)
+        run: vsce package --out simple-trace.vsix
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: simple-trace-vsix
+          path: simple-trace.vsix

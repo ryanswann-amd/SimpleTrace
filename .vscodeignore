@@ -1,0 +1,7 @@
+.vscode/**
+.github/**
+.gitignore
+install.sh
+node_modules/**
+**/*.map
+*.vsix

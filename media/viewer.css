@@ -1,0 +1,114 @@
+:root {
+  --bg: var(--vscode-editor-background, #1e1e1e);
+  --fg: var(--vscode-editor-foreground, #d4d4d4);
+  --muted: var(--vscode-descriptionForeground, #9aa0a6);
+  --border: var(--vscode-panel-border, #333);
+  --toolbar-bg: var(--vscode-editorWidget-background, #252526);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--vscode-font-family, "Segoe UI", system-ui, sans-serif);
+  font-size: 12px;
+}
+
+#toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--toolbar-bg);
+  border-bottom: 1px solid var(--border);
+  height: 34px;
+}
+
+#toolbar .spacer { flex: 0 0 4px; }
+#toolbar #title { font-weight: 600; }
+#toolbar .ctrl { color: var(--muted); user-select: none; }
+
+#toolbar input[type="text"] {
+  background: var(--vscode-input-background, #3c3c3c);
+  color: var(--vscode-input-foreground, #ccc);
+  border: 1px solid var(--vscode-input-border, #555);
+  border-radius: 3px;
+  padding: 3px 6px;
+  width: 180px;
+}
+
+#toolbar button {
+  background: var(--vscode-button-background, #0e639c);
+  color: var(--vscode-button-foreground, #fff);
+  border: none;
+  border-radius: 3px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+#toolbar button:hover { background: var(--vscode-button-hoverBackground, #1177bb); }
+
+#stats { color: var(--muted); margin-left: auto; white-space: nowrap; }
+
+#legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 5px 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--toolbar-bg);
+  min-height: 24px;
+}
+#legend .item { display: flex; align-items: center; gap: 5px; cursor: pointer; user-select: none; }
+#legend .item.disabled { opacity: 0.35; text-decoration: line-through; }
+#legend .swatch { width: 12px; height: 12px; border-radius: 2px; }
+
+#stage {
+  position: absolute;
+  top: 92px;
+  left: 0;
+  right: 0;
+  bottom: 22px;
+  overflow: hidden;
+}
+
+#canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+#canvas.panning { cursor: grabbing; }
+
+#tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: var(--vscode-editorHoverWidget-background, #252526);
+  color: var(--vscode-editorHoverWidget-foreground, #ccc);
+  border: 1px solid var(--vscode-editorHoverWidget-border, #454545);
+  border-radius: 4px;
+  padding: 6px 8px;
+  max-width: 380px;
+  font-size: 11px;
+  line-height: 1.4;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+#tooltip.hidden { display: none; }
+#tooltip .t-name { font-weight: 600; margin-bottom: 2px; }
+#tooltip .t-row { color: var(--muted); }
+#tooltip .t-row b { color: var(--fg); font-weight: 500; }
+
+#help {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 22px;
+  line-height: 22px;
+  padding: 0 10px;
+  font-size: 11px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: var(--toolbar-bg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

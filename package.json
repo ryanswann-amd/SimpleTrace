@@ -1,0 +1,84 @@
+{
+  "name": "simple-trace",
+  "displayName": "Simple Trace",
+  "description": "A simple, native Perfetto-style timeline viewer for Chrome Trace Event Format JSON files.",
+  "version": "0.1.0",
+  "publisher": "simple-trace",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "trace",
+    "perfetto",
+    "chrome trace",
+    "timeline",
+    "profiling"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanswann-amd/SimpleTrace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryanswann-amd/SimpleTrace/issues"
+  },
+  "homepage": "https://github.com/ryanswann-amd/SimpleTrace#readme",
+  "scripts": {
+    "check": "node -c extension.js && node -c media/viewer.js",
+    "package": "vsce package --out simple-trace.vsix"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.2.0"
+  },
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "simpleTrace.timeline",
+        "displayName": "Simple Trace (Timeline)",
+        "selector": [
+          { "filenamePattern": "*trace*.json" },
+          { "filenamePattern": "*.trace.json" },
+          { "filenamePattern": "*.perfetto.json" },
+          { "filenamePattern": "*.chrometrace.json" }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "simpleTrace.timelineOptional",
+        "displayName": "Simple Trace (Timeline)",
+        "selector": [
+          { "filenamePattern": "*.json" }
+        ],
+        "priority": "option"
+      }
+    ],
+    "commands": [
+      {
+        "command": "simpleTrace.openActiveFile",
+        "title": "Simple Trace: Open Active File as Timeline"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "simpleTrace.openActiveFile",
+          "when": "resourceExtname == .json",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "simpleTrace.openActiveFile",
+          "when": "resourceExtname == .json",
+          "group": "navigation"
+        }
+      ]
+    }
+  }
+}

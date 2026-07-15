@@ -1,0 +1,43 @@
+name: Release
+
+# Packages the extension into a .vsix and attaches it to a GitHub Release
+# whenever you push a version tag (e.g. `git tag v0.1.0 && git push --tags`).
+# Can also be triggered manually from the Actions tab.
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install vsce
+        run: npm install -g @vscode/vsce
+
+      - name: Package extension
+        run: vsce package --out simple-trace.vsix
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: simple-trace-vsix
+          path: simple-trace.vsix
+
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: simple-trace.vsix
+          generate_release_notes: true
