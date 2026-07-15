@@ -4,6 +4,15 @@ A native VSCode / Cursor extension that renders Chrome Trace Event Format JSON
 as an interactive, Perfetto-style timeline directly inside the editor. No
 browser, no uploading your traces to `ui.perfetto.dev`.
 
+## Quick start
+
+Install the latest release into Cursor (or VSCode), then run
+"Developer: Reload Window":
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ryanswann-amd/SimpleTrace/main/install.sh | bash
+```
+
 Simple Trace reads the same JSON that Perfetto and `chrome://tracing` consume,
 so any tool that emits Chrome-trace output (profilers, tracers, custom
 instrumentation) can be viewed in place.
