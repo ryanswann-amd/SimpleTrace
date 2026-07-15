@@ -17,6 +17,10 @@ Simple Trace reads the same JSON that Perfetto and `chrome://tracing` consume,
 so any tool that emits Chrome-trace output (profilers, tracers, custom
 instrumentation) can be viewed in place.
 
+![Simple Trace rendering a trace timeline](docs/screenshot.png)
+
+_Rendering [`examples/example.trace.json`](examples/example.trace.json). Regenerate with `node docs/render_screenshot.mjs`._
+
 ## Why
 
 Opening trace files usually means leaving your editor, launching a browser, and

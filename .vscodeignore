@@ -3,5 +3,7 @@
 .gitignore
 install.sh
 node_modules/**
+docs/**
+examples/**
 **/*.map
 *.vsix

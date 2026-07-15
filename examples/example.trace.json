@@ -1,0 +1,8297 @@
+{
+ "traceEvents": [
+  {
+   "name": "process_name",
+   "ph": "M",
+   "pid": 0,
+   "args": {
+    "name": "worker pool"
+   }
+  },
+  {
+   "name": "thread_name",
+   "ph": "M",
+   "pid": 0,
+   "tid": 0,
+   "args": {
+    "name": "worker 00"
+   }
+  },
+  {
+   "name": "thread_sort_index",
+   "ph": "M",
+   "pid": 0,
+   "tid": 0,
+   "args": {
+    "sort_index": 0
+   }
+  },
+  {
+   "name": "thread_name",
+   "ph": "M",
+   "pid": 0,
+   "tid": 1,
+   "args": {
+    "name": "worker 01"
+   }
+  },
+  {
+   "name": "thread_sort_index",
+   "ph": "M",
+   "pid": 0,
+   "tid": 1,
+   "args": {
+    "sort_index": 1
+   }
+  },
+  {
+   "name": "thread_name",
+   "ph": "M",
+   "pid": 0,
+   "tid": 2,
+   "args": {
+    "name": "worker 02"
+   }
+  },
+  {
+   "name": "thread_sort_index",
+   "ph": "M",
+   "pid": 0,
+   "tid": 2,
+   "args": {
+    "sort_index": 2
+   }
+  },
+  {
+   "name": "thread_name",
+   "ph": "M",
+   "pid": 0,
+   "tid": 3,
+   "args": {
+    "name": "worker 03"
+   }
+  },
+  {
+   "name": "thread_sort_index",
+   "ph": "M",
+   "pid": 0,
+   "tid": 3,
+   "args": {
+    "sort_index": 3
+   }
+  },
+  {
+   "name": "thread_name",
+   "ph": "M",
+   "pid": 0,
+   "tid": 4,
+   "args": {
+    "name": "worker 04"
+   }
+  },
+  {
+   "name": "thread_sort_index",
+   "ph": "M",
+   "pid": 0,
+   "tid": 4,
+   "args": {
+    "sort_index": 4
+   }
+  },
+  {
+   "name": "thread_name",
+   "ph": "M",
+   "pid": 0,
+   "tid": 5,
+   "args": {
+    "name": "worker 05"
+   }
+  },
+  {
+   "name": "thread_sort_index",
+   "ph": "M",
+   "pid": 0,
+   "tid": 5,
+   "args": {
+    "sort_index": 5
+   }
+  },
+  {
+   "name": "thread_name",
+   "ph": "M",
+   "pid": 0,
+   "tid": 6,
+   "args": {
+    "name": "worker 06"
+   }
+  },
+  {
+   "name": "thread_sort_index",
+   "ph": "M",
+   "pid": 0,
+   "tid": 6,
+   "args": {
+    "sort_index": 6
+   }
+  },
+  {
+   "name": "thread_name",
+   "ph": "M",
+   "pid": 0,
+   "tid": 7,
+   "args": {
+    "name": "worker 07"
+   }
+  },
+  {
+   "name": "thread_sort_index",
+   "ph": "M",
+   "pid": 0,
+   "tid": 7,
+   "args": {
+    "sort_index": 7
+   }
+  },
+  {
+   "name": "thread_name",
+   "ph": "M",
+   "pid": 0,
+   "tid": 8,
+   "args": {
+    "name": "worker 08"
+   }
+  },
+  {
+   "name": "thread_sort_index",
+   "ph": "M",
+   "pid": 0,
+   "tid": 8,
+   "args": {
+    "sort_index": 8
+   }
+  },
+  {
+   "name": "thread_name",
+   "ph": "M",
+   "pid": 0,
+   "tid": 9,
+   "args": {
+    "name": "worker 09"
+   }
+  },
+  {
+   "name": "thread_sort_index",
+   "ph": "M",
+   "pid": 0,
+   "tid": 9,
+   "args": {
+    "sort_index": 9
+   }
+  },
+  {
+   "name": "thread_name",
+   "ph": "M",
+   "pid": 0,
+   "tid": 10,
+   "args": {
+    "name": "worker 10"
+   }
+  },
+  {
+   "name": "thread_sort_index",
+   "ph": "M",
+   "pid": 0,
+   "tid": 10,
+   "args": {
+    "sort_index": 10
+   }
+  },
+  {
+   "name": "thread_name",
+   "ph": "M",
+   "pid": 0,
+   "tid": 11,
+   "args": {
+    "name": "worker 11"
+   }
+  },
+  {
+   "name": "thread_sort_index",
+   "ph": "M",
+   "pid": 0,
+   "tid": 11,
+   "args": {
+    "sort_index": 11
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 12.95,
+   "dur": 65.57,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 26.07,
+   "dur": 32.78,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 84.09,
+   "dur": 50.36,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 136.56,
+   "dur": 63.92,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 201.89,
+   "dur": 20.3,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 230.54,
+   "dur": 60.71,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 242.68,
+   "dur": 30.36,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 292.79,
+   "dur": 67.63,
+   "args": {
+    "tile": 5
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 306.31,
+   "dur": 33.81,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 364.11,
+   "dur": 40.85,
+   "args": {
+    "tile": 7
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 413.84,
+   "dur": 20.31,
+   "args": {
+    "tile": 8
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 441.97,
+   "dur": 54.23,
+   "args": {
+    "tile": 8
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 505.07,
+   "dur": 68.67,
+   "args": {
+    "tile": 10
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 583.25,
+   "dur": 9.33,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 602.52,
+   "dur": 45.09,
+   "args": {
+    "tile": 12
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 652.76,
+   "dur": 28.2,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 658.4,
+   "dur": 14.1,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 685.48,
+   "dur": 10.95,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 704.8,
+   "dur": 31.14,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 745.57,
+   "dur": 32.34,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 781.27,
+   "dur": 49.33,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 836.23,
+   "dur": 55.48,
+   "args": {
+    "tile": 16
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 900.58,
+   "dur": 19.66,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 921.8,
+   "dur": 34.61,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 928.72,
+   "dur": 17.31,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 958.78,
+   "dur": 45.45,
+   "args": {
+    "tile": 19
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 967.87,
+   "dur": 22.73,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1007.5,
+   "dur": 45.49,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1016.6,
+   "dur": 22.75,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1058.35,
+   "dur": 27.15,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1063.78,
+   "dur": 13.58,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1086.71,
+   "dur": 3.24,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1095.7,
+   "dur": 6.3,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1104.51,
+   "dur": 29.83,
+   "args": {
+    "tile": 22
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1142.65,
+   "dur": 9.66,
+   "args": {
+    "tile": 22
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1155.35,
+   "dur": 8.64,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1167.32,
+   "dur": 57.17,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1234.08,
+   "dur": 35.43,
+   "args": {
+    "tile": 24
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1278.61,
+   "dur": 50.98,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1336.54,
+   "dur": 4.61,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1349.25,
+   "dur": 76.06,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1432.83,
+   "dur": 28.89,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1438.61,
+   "dur": 14.45,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1470.16,
+   "dur": 4.18,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1475.47,
+   "dur": 6.9,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1491.22,
+   "dur": 28.18,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1525.68,
+   "dur": 49.33,
+   "args": {
+    "tile": 30
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1535.55,
+   "dur": 24.67,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1581.26,
+   "dur": 7.79,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1594.76,
+   "dur": 50.81,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1604.92,
+   "dur": 25.4,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1650.83,
+   "dur": 38.33,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1697.21,
+   "dur": 59.22,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1762.49,
+   "dur": 42.56,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1810.66,
+   "dur": 36.51,
+   "args": {
+    "tile": 36
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1854.47,
+   "dur": 11.49,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1874.52,
+   "dur": 28.51,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1880.22,
+   "dur": 14.26,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1910.06,
+   "dur": 47.23,
+   "args": {
+    "tile": 38
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1959.57,
+   "dur": 6.58,
+   "args": {
+    "tile": 39
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1971.54,
+   "dur": 7.64,
+   "args": {
+    "tile": 39
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1983.23,
+   "dur": 42.3,
+   "args": {
+    "tile": 39
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 0,
+   "ts": 1991.69,
+   "dur": 21.15,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 13.26,
+   "dur": 59.33,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 82.33,
+   "dur": 38.59,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 90.05,
+   "dur": 19.29,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 125.72,
+   "dur": 11.27,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 143.13,
+   "dur": 45.97,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 190.75,
+   "dur": 10.71,
+   "args": {
+    "tile": 3
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 203.06,
+   "dur": 39.89,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 246.36,
+   "dur": 56.88,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 257.73,
+   "dur": 28.44,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 306.06,
+   "dur": 41.35,
+   "args": {
+    "tile": 6
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 314.33,
+   "dur": 20.68,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 351.53,
+   "dur": 37.53,
+   "args": {
+    "tile": 7
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 359.04,
+   "dur": 18.77,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 394.33,
+   "dur": 7.46,
+   "args": {
+    "tile": 7
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 410.3,
+   "dur": 55.47,
+   "args": {
+    "tile": 8
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 473.13,
+   "dur": 17.45,
+   "args": {
+    "tile": 9
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 492.21,
+   "dur": 18.8,
+   "args": {
+    "tile": 9
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 519.85,
+   "dur": 28.19,
+   "args": {
+    "tile": 10
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 550.46,
+   "dur": 29.16,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 582.81,
+   "dur": 6.43,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 594.52,
+   "dur": 19.1,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 615.43,
+   "dur": 22.92,
+   "args": {
+    "tile": 12
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 644.11,
+   "dur": 54.56,
+   "args": {
+    "tile": 12
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 702.61,
+   "dur": 3.39,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 714.52,
+   "dur": 4.25,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 724.49,
+   "dur": 25.7,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 759.22,
+   "dur": 16.4,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 779.87,
+   "dur": 78.51,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 863.78,
+   "dur": 75.84,
+   "args": {
+    "tile": 17
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 941.22,
+   "dur": 26.95,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 971.01,
+   "dur": 32.22,
+   "args": {
+    "tile": 19
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1010.38,
+   "dur": 18.49,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1032.15,
+   "dur": 15.56,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1051.14,
+   "dur": 28.09,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1084.41,
+   "dur": 27.66,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1121.49,
+   "dur": 52.13,
+   "args": {
+    "tile": 22
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1131.92,
+   "dur": 26.06,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1176.51,
+   "dur": 7.72,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1193.8,
+   "dur": 77.42,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1209.28,
+   "dur": 38.71,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1280.29,
+   "dur": 8.08,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1292.09,
+   "dur": 44.08,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1344.72,
+   "dur": 84.85,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1361.69,
+   "dur": 42.42,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1434.1,
+   "dur": 5.48,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1441.02,
+   "dur": 78.43,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1456.7,
+   "dur": 39.21,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1525.04,
+   "dur": 46.13,
+   "args": {
+    "tile": 30
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1580.4,
+   "dur": 9.59,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1595.05,
+   "dur": 17.2,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1614.4,
+   "dur": 14.55,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1632.29,
+   "dur": 32.75,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1667.49,
+   "dur": 83.42,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1755.96,
+   "dur": 33.47,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1762.65,
+   "dur": 16.73,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1792.75,
+   "dur": 24.49,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1822.96,
+   "dur": 43.67,
+   "args": {
+    "tile": 36
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1831.69,
+   "dur": 21.84,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1872.16,
+   "dur": 27.2,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1903.96,
+   "dur": 26.67,
+   "args": {
+    "tile": 38
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1931.92,
+   "dur": 41.42,
+   "args": {
+    "tile": 38
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1977.87,
+   "dur": 5.24,
+   "args": {
+    "tile": 39
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 1,
+   "ts": 1985.08,
+   "dur": 56.57,
+   "args": {
+    "tile": 39
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 18.29,
+   "dur": 25.21,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 50.31,
+   "dur": 28.96,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 56.1,
+   "dur": 14.48,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 80.9,
+   "dur": 16.54,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 98.54,
+   "dur": 52.25,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 108.99,
+   "dur": 26.12,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 153.9,
+   "dur": 87.24,
+   "args": {
+    "tile": 3
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 171.35,
+   "dur": 43.62,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 248.21,
+   "dur": 22.68,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 272.2,
+   "dur": 49.44,
+   "args": {
+    "tile": 5
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 327.18,
+   "dur": 87.89,
+   "args": {
+    "tile": 6
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 344.76,
+   "dur": 43.95,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 422.92,
+   "dur": 86.63,
+   "args": {
+    "tile": 8
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 440.24,
+   "dur": 43.32,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 516.54,
+   "dur": 11.77,
+   "args": {
+    "tile": 10
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 530.58,
+   "dur": 24.21,
+   "args": {
+    "tile": 10
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 564.77,
+   "dur": 9.72,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 575.77,
+   "dur": 29.93,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 606.73,
+   "dur": 44.6,
+   "args": {
+    "tile": 12
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 615.65,
+   "dur": 22.3,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 655.54,
+   "dur": 17.22,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 677.11,
+   "dur": 3.27,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 685.08,
+   "dur": 16.57,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 710.93,
+   "dur": 72.31,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 789.79,
+   "dur": 70.16,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 869.2,
+   "dur": 25.52,
+   "args": {
+    "tile": 17
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 904.34,
+   "dur": 7.44,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 921.13,
+   "dur": 76.18,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1001.26,
+   "dur": 45.33,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1049.82,
+   "dur": 22.37,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1082.08,
+   "dur": 25.89,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1087.26,
+   "dur": 12.94,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1111.07,
+   "dur": 22.83,
+   "args": {
+    "tile": 22
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1140.88,
+   "dur": 78.86,
+   "args": {
+    "tile": 22
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1222.54,
+   "dur": 37.17,
+   "args": {
+    "tile": 24
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1229.97,
+   "dur": 18.59,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1264.28,
+   "dur": 8.88,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1283.07,
+   "dur": 53.23,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1293.72,
+   "dur": 26.62,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1339.95,
+   "dur": 33.27,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1346.6,
+   "dur": 16.64,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1382.02,
+   "dur": 25.11,
+   "args": {
+    "tile": 27
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1413.49,
+   "dur": 21.36,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1438.15,
+   "dur": 12.48,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1457.73,
+   "dur": 41.85,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1466.1,
+   "dur": 20.93,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1501.5,
+   "dur": 58.51,
+   "args": {
+    "tile": 30
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1564.69,
+   "dur": 41.53,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1573.0,
+   "dur": 20.77,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1610.97,
+   "dur": 23.87,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1637.68,
+   "dur": 83.11,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1725.94,
+   "dur": 21.04,
+   "args": {
+    "tile": 34
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1730.15,
+   "dur": 10.52,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1753.58,
+   "dur": 55.31,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1810.87,
+   "dur": 29.27,
+   "args": {
+    "tile": 36
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1849.63,
+   "dur": 6.49,
+   "args": {
+    "tile": 36
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1865.26,
+   "dur": 50.36,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1920.26,
+   "dur": 24.82,
+   "args": {
+    "tile": 38
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1950.74,
+   "dur": 28.61,
+   "args": {
+    "tile": 39
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1956.46,
+   "dur": 14.31,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 2,
+   "ts": 1985.41,
+   "dur": 20.3,
+   "args": {
+    "tile": 39
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 25.08,
+   "dur": 49.41,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 34.96,
+   "dur": 24.7,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 79.43,
+   "dur": 63.32,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 147.88,
+   "dur": 53.13,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 158.5,
+   "dur": 26.56,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 205.98,
+   "dur": 22.0,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 235.98,
+   "dur": 19.09,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 257.29,
+   "dur": 51.67,
+   "args": {
+    "tile": 5
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 318.8,
+   "dur": 28.15,
+   "args": {
+    "tile": 6
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 356.33,
+   "dur": 44.56,
+   "args": {
+    "tile": 7
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 365.25,
+   "dur": 22.28,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 409.24,
+   "dur": 55.16,
+   "args": {
+    "tile": 8
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 468.26,
+   "dur": 32.75,
+   "args": {
+    "tile": 9
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 503.53,
+   "dur": 43.63,
+   "args": {
+    "tile": 10
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 556.02,
+   "dur": 27.42,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 590.1,
+   "dur": 75.84,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 605.27,
+   "dur": 37.92,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 673.82,
+   "dur": 24.36,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 701.46,
+   "dur": 44.87,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 747.35,
+   "dur": 30.46,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 779.99,
+   "dur": 65.72,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 793.13,
+   "dur": 32.86,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 849.92,
+   "dur": 60.85,
+   "args": {
+    "tile": 16
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 862.09,
+   "dur": 30.43,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 912.99,
+   "dur": 8.74,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 930.57,
+   "dur": 15.52,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 952.15,
+   "dur": 65.19,
+   "args": {
+    "tile": 19
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 965.19,
+   "dur": 32.6,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1026.47,
+   "dur": 57.21,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1084.79,
+   "dur": 11.13,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1101.48,
+   "dur": 28.92,
+   "args": {
+    "tile": 22
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1131.84,
+   "dur": 10.6,
+   "args": {
+    "tile": 22
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1150.15,
+   "dur": 17.95,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1171.19,
+   "dur": 43.49,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1218.07,
+   "dur": 25.35,
+   "args": {
+    "tile": 24
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1250.2,
+   "dur": 5.34,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1258.67,
+   "dur": 29.71,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1292.33,
+   "dur": 83.53,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1381.09,
+   "dur": 34.67,
+   "args": {
+    "tile": 27
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1421.9,
+   "dur": 34.84,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1428.86,
+   "dur": 17.42,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1457.98,
+   "dur": 85.03,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1474.98,
+   "dur": 42.51,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1550.24,
+   "dur": 17.96,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1572.47,
+   "dur": 17.97,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1599.66,
+   "dur": 3.31,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1611.6,
+   "dur": 43.42,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1656.92,
+   "dur": 73.02,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1671.52,
+   "dur": 36.51,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1733.25,
+   "dur": 70.1,
+   "args": {
+    "tile": 34
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1812.01,
+   "dur": 34.64,
+   "args": {
+    "tile": 36
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1850.77,
+   "dur": 53.8,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1912.95,
+   "dur": 20.09,
+   "args": {
+    "tile": 38
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1916.97,
+   "dur": 10.05,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1938.46,
+   "dur": 12.06,
+   "args": {
+    "tile": 38
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1959.01,
+   "dur": 86.07,
+   "args": {
+    "tile": 39
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 3,
+   "ts": 1976.22,
+   "dur": 43.04,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 25.46,
+   "dur": 75.15,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 40.49,
+   "dur": 37.58,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 105.23,
+   "dur": 82.33,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 121.69,
+   "dur": 41.16,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 190.92,
+   "dur": 5.1,
+   "args": {
+    "tile": 3
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 201.17,
+   "dur": 24.57,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 229.68,
+   "dur": 79.02,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 245.48,
+   "dur": 39.51,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 316.66,
+   "dur": 18.16,
+   "args": {
+    "tile": 6
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 337.55,
+   "dur": 69.22,
+   "args": {
+    "tile": 6
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 351.39,
+   "dur": 34.61,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 410.71,
+   "dur": 15.22,
+   "args": {
+    "tile": 8
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 433.48,
+   "dur": 87.37,
+   "args": {
+    "tile": 8
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 528.45,
+   "dur": 22.04,
+   "args": {
+    "tile": 10
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 554.98,
+   "dur": 47.93,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 608.08,
+   "dur": 62.26,
+   "args": {
+    "tile": 12
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 620.53,
+   "dur": 31.13,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 676.51,
+   "dur": 47.5,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 731.97,
+   "dur": 43.87,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 779.66,
+   "dur": 50.21,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 836.53,
+   "dur": 49.65,
+   "args": {
+    "tile": 16
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 895.56,
+   "dur": 65.81,
+   "args": {
+    "tile": 17
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 962.71,
+   "dur": 25.2,
+   "args": {
+    "tile": 19
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 989.82,
+   "dur": 23.78,
+   "args": {
+    "tile": 19
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1022.06,
+   "dur": 28.86,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1055.45,
+   "dur": 31.0,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1089.92,
+   "dur": 20.93,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1094.1,
+   "dur": 10.47,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1114.24,
+   "dur": 71.9,
+   "args": {
+    "tile": 22
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1190.67,
+   "dur": 29.05,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1196.48,
+   "dur": 14.53,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1225.78,
+   "dur": 87.47,
+   "args": {
+    "tile": 24
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1318.46,
+   "dur": 58.38,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1380.24,
+   "dur": 37.75,
+   "args": {
+    "tile": 27
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1421.52,
+   "dur": 41.13,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1466.91,
+   "dur": 11.15,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1486.12,
+   "dur": 78.19,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1571.22,
+   "dur": 27.11,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1576.64,
+   "dur": 13.55,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1600.7,
+   "dur": 8.48,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1617.21,
+   "dur": 52.75,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1677.19,
+   "dur": 17.65,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1698.22,
+   "dur": 29.75,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1704.17,
+   "dur": 14.88,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1733.39,
+   "dur": 26.98,
+   "args": {
+    "tile": 34
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1765.59,
+   "dur": 26.49,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1801.72,
+   "dur": 64.59,
+   "args": {
+    "tile": 36
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1875.7,
+   "dur": 88.72,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1893.45,
+   "dur": 44.36,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 4,
+   "ts": 1971.88,
+   "dur": 31.48,
+   "args": {
+    "tile": 39
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 30.82,
+   "dur": 50.46,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 40.92,
+   "dur": 25.23,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 89.74,
+   "dur": 13.98,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 110.6,
+   "dur": 28.46,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 145.78,
+   "dur": 54.85,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 202.08,
+   "dur": 20.43,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 230.62,
+   "dur": 9.27,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 246.25,
+   "dur": 35.6,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 283.77,
+   "dur": 22.59,
+   "args": {
+    "tile": 5
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 288.29,
+   "dur": 11.29,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 314.76,
+   "dur": 28.59,
+   "args": {
+    "tile": 6
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 347.22,
+   "dur": 28.54,
+   "args": {
+    "tile": 6
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 377.12,
+   "dur": 76.72,
+   "args": {
+    "tile": 7
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 392.46,
+   "dur": 38.36,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 458.33,
+   "dur": 29.58,
+   "args": {
+    "tile": 9
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 489.82,
+   "dur": 15.7,
+   "args": {
+    "tile": 9
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 512.67,
+   "dur": 87.64,
+   "args": {
+    "tile": 10
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 530.2,
+   "dur": 43.82,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 607.79,
+   "dur": 71.35,
+   "args": {
+    "tile": 12
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 687.84,
+   "dur": 46.92,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 744.15,
+   "dur": 87.5,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 840.01,
+   "dur": 41.77,
+   "args": {
+    "tile": 16
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 848.36,
+   "dur": 20.89,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 883.32,
+   "dur": 60.25,
+   "args": {
+    "tile": 17
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 947.84,
+   "dur": 32.36,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 989.7,
+   "dur": 17.73,
+   "args": {
+    "tile": 19
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1014.76,
+   "dur": 58.99,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1080.15,
+   "dur": 50.0,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1139.22,
+   "dur": 26.84,
+   "args": {
+    "tile": 22
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1172.33,
+   "dur": 52.5,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1233.63,
+   "dur": 26.73,
+   "args": {
+    "tile": 24
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1269.58,
+   "dur": 25.95,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1304.92,
+   "dur": 62.48,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1317.42,
+   "dur": 31.24,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1375.17,
+   "dur": 51.3,
+   "args": {
+    "tile": 27
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1429.56,
+   "dur": 27.47,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1463.33,
+   "dur": 33.46,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1501.42,
+   "dur": 8.98,
+   "args": {
+    "tile": 30
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1512.35,
+   "dur": 41.87,
+   "args": {
+    "tile": 30
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1559.9,
+   "dur": 22.35,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1585.61,
+   "dur": 49.53,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1644.81,
+   "dur": 22.65,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1649.34,
+   "dur": 11.33,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1673.47,
+   "dur": 3.58,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1683.43,
+   "dur": 28.39,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1721.44,
+   "dur": 22.19,
+   "args": {
+    "tile": 34
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1753.55,
+   "dur": 22.7,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1784.79,
+   "dur": 75.05,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1799.8,
+   "dur": 37.52,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1862.14,
+   "dur": 28.45,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1898.4,
+   "dur": 42.67,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1906.94,
+   "dur": 21.34,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1944.22,
+   "dur": 67.43,
+   "args": {
+    "tile": 38
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 5,
+   "ts": 1957.71,
+   "dur": 33.72,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 8.82,
+   "dur": 7.03,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 17.72,
+   "dur": 6.06,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 32.19,
+   "dur": 11.14,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 50.75,
+   "dur": 27.16,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 80.31,
+   "dur": 78.77,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 96.06,
+   "dur": 39.38,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 168.21,
+   "dur": 88.5,
+   "args": {
+    "tile": 3
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 185.91,
+   "dur": 44.25,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 262.01,
+   "dur": 38.05,
+   "args": {
+    "tile": 5
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 309.38,
+   "dur": 40.26,
+   "args": {
+    "tile": 6
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 317.43,
+   "dur": 20.13,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 359.44,
+   "dur": 76.49,
+   "args": {
+    "tile": 7
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 441.68,
+   "dur": 50.47,
+   "args": {
+    "tile": 8
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 451.77,
+   "dur": 25.23,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 494.76,
+   "dur": 18.57,
+   "args": {
+    "tile": 9
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 519.81,
+   "dur": 12.53,
+   "args": {
+    "tile": 10
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 540.65,
+   "dur": 9.45,
+   "args": {
+    "tile": 10
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 557.59,
+   "dur": 76.75,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 572.93,
+   "dur": 38.37,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 635.47,
+   "dur": 4.67,
+   "args": {
+    "tile": 12
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 648.63,
+   "dur": 31.44,
+   "args": {
+    "tile": 12
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 685.08,
+   "dur": 23.72,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 712.69,
+   "dur": 17.75,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 740.04,
+   "dur": 19.67,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 769.41,
+   "dur": 32.77,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 775.97,
+   "dur": 16.38,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 804.05,
+   "dur": 41.97,
+   "args": {
+    "tile": 16
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 851.73,
+   "dur": 47.27,
+   "args": {
+    "tile": 17
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 901.11,
+   "dur": 14.15,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 917.49,
+   "dur": 11.24,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 931.21,
+   "dur": 33.92,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 970.86,
+   "dur": 85.89,
+   "args": {
+    "tile": 19
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 988.04,
+   "dur": 42.95,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1061.67,
+   "dur": 10.63,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1073.78,
+   "dur": 28.56,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1109.03,
+   "dur": 57.16,
+   "args": {
+    "tile": 22
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1120.46,
+   "dur": 28.58,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1168.44,
+   "dur": 10.28,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1187.68,
+   "dur": 9.11,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1200.25,
+   "dur": 21.67,
+   "args": {
+    "tile": 24
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1226.82,
+   "dur": 4.08,
+   "args": {
+    "tile": 24
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1237.25,
+   "dur": 7.8,
+   "args": {
+    "tile": 24
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1247.39,
+   "dur": 29.2,
+   "args": {
+    "tile": 24
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1253.23,
+   "dur": 14.6,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1278.38,
+   "dur": 21.42,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1302.61,
+   "dur": 42.58,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1348.98,
+   "dur": 35.51,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1356.08,
+   "dur": 17.76,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1388.67,
+   "dur": 37.11,
+   "args": {
+    "tile": 27
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1435.67,
+   "dur": 74.05,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1450.48,
+   "dur": 37.02,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1511.27,
+   "dur": 50.79,
+   "args": {
+    "tile": 30
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1569.71,
+   "dur": 43.59,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1621.7,
+   "dur": 24.35,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1654.11,
+   "dur": 54.19,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1716.19,
+   "dur": 29.18,
+   "args": {
+    "tile": 34
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1753.42,
+   "dur": 7.12,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1768.05,
+   "dur": 47.35,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1824.05,
+   "dur": 12.05,
+   "args": {
+    "tile": 36
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1842.28,
+   "dur": 28.24,
+   "args": {
+    "tile": 36
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1879.07,
+   "dur": 3.1,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1883.59,
+   "dur": 28.25,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1921.82,
+   "dur": 23.08,
+   "args": {
+    "tile": 38
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1951.25,
+   "dur": 86.35,
+   "args": {
+    "tile": 39
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 6,
+   "ts": 1968.52,
+   "dur": 43.18,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 22.45,
+   "dur": 29.22,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 58.29,
+   "dur": 4.54,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 66.69,
+   "dur": 11.05,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 84.95,
+   "dur": 33.94,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 122.5,
+   "dur": 12.14,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 141.07,
+   "dur": 89.56,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 234.39,
+   "dur": 52.9,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 294.3,
+   "dur": 54.85,
+   "args": {
+    "tile": 5
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 359.13,
+   "dur": 10.67,
+   "args": {
+    "tile": 7
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 371.76,
+   "dur": 31.94,
+   "args": {
+    "tile": 7
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 405.25,
+   "dur": 73.94,
+   "args": {
+    "tile": 8
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 420.04,
+   "dur": 36.97,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 482.59,
+   "dur": 83.27,
+   "args": {
+    "tile": 9
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 499.25,
+   "dur": 41.63,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 567.36,
+   "dur": 8.58,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 579.18,
+   "dur": 85.16,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 668.07,
+   "dur": 57.74,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 730.32,
+   "dur": 54.39,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 792.84,
+   "dur": 32.14,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 799.27,
+   "dur": 16.07,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 831.04,
+   "dur": 57.36,
+   "args": {
+    "tile": 16
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 842.51,
+   "dur": 28.68,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 896.83,
+   "dur": 37.15,
+   "args": {
+    "tile": 17
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 904.26,
+   "dur": 18.57,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 940.96,
+   "dur": 30.91,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 974.02,
+   "dur": 25.71,
+   "args": {
+    "tile": 19
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1007.23,
+   "dur": 87.09,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1024.65,
+   "dur": 43.54,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1099.39,
+   "dur": 69.45,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1113.28,
+   "dur": 34.73,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1172.06,
+   "dur": 20.53,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1198.47,
+   "dur": 74.02,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1213.28,
+   "dur": 37.01,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1277.0,
+   "dur": 32.39,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1283.48,
+   "dur": 16.2,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1315.45,
+   "dur": 55.03,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1326.46,
+   "dur": 27.51,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1372.62,
+   "dur": 55.9,
+   "args": {
+    "tile": 27
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1437.46,
+   "dur": 16.33,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1460.76,
+   "dur": 48.88,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1513.81,
+   "dur": 56.07,
+   "args": {
+    "tile": 30
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1577.3,
+   "dur": 22.8,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1581.86,
+   "dur": 11.4,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1601.45,
+   "dur": 64.68,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1669.43,
+   "dur": 15.68,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1693.09,
+   "dur": 23.01,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1697.69,
+   "dur": 11.5,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1718.1,
+   "dur": 48.73,
+   "args": {
+    "tile": 34
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1774.08,
+   "dur": 72.33,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1851.23,
+   "dur": 8.65,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1864.95,
+   "dur": 68.88,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1878.73,
+   "dur": 34.44,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 7,
+   "ts": 1941.69,
+   "dur": 69.19,
+   "args": {
+    "tile": 38
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 21.76,
+   "dur": 24.16,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 26.59,
+   "dur": 12.08,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 48.14,
+   "dur": 25.88,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 79.03,
+   "dur": 4.28,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 89.37,
+   "dur": 77.08,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 172.84,
+   "dur": 26.29,
+   "args": {
+    "tile": 3
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 203.37,
+   "dur": 24.22,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 208.21,
+   "dur": 12.11,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 229.61,
+   "dur": 52.81,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 240.17,
+   "dur": 26.4,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 292.34,
+   "dur": 59.11,
+   "args": {
+    "tile": 5
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 353.43,
+   "dur": 12.18,
+   "args": {
+    "tile": 7
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 374.88,
+   "dur": 44.37,
+   "args": {
+    "tile": 7
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 422.46,
+   "dur": 21.94,
+   "args": {
+    "tile": 8
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 426.85,
+   "dur": 10.97,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 451.14,
+   "dur": 50.31,
+   "args": {
+    "tile": 9
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 509.13,
+   "dur": 32.92,
+   "args": {
+    "tile": 10
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 546.37,
+   "dur": 40.51,
+   "args": {
+    "tile": 10
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 595.26,
+   "dur": 37.25,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 634.93,
+   "dur": 60.68,
+   "args": {
+    "tile": 12
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 647.06,
+   "dur": 30.34,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 705.33,
+   "dur": 22.8,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 709.89,
+   "dur": 11.4,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 736.7,
+   "dur": 27.75,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 770.07,
+   "dur": 17.65,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 796.86,
+   "dur": 40.7,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 805.0,
+   "dur": 20.35,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 839.33,
+   "dur": 52.23,
+   "args": {
+    "tile": 16
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 901.22,
+   "dur": 45.44,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 950.33,
+   "dur": 18.58,
+   "args": {
+    "tile": 19
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 973.0,
+   "dur": 7.03,
+   "args": {
+    "tile": 19
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 981.79,
+   "dur": 33.74,
+   "args": {
+    "tile": 19
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1021.61,
+   "dur": 28.0,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1027.21,
+   "dur": 14.0,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1058.37,
+   "dur": 26.65,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1088.06,
+   "dur": 19.29,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1112.02,
+   "dur": 50.77,
+   "args": {
+    "tile": 22
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1164.82,
+   "dur": 6.53,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1173.88,
+   "dur": 9.99,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1185.39,
+   "dur": 46.06,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1194.6,
+   "dur": 23.03,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1238.82,
+   "dur": 21.67,
+   "args": {
+    "tile": 24
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1269.74,
+   "dur": 9.87,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1286.74,
+   "dur": 48.18,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1342.41,
+   "dur": 62.27,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1354.87,
+   "dur": 31.13,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1414.01,
+   "dur": 35.1,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1455.34,
+   "dur": 21.47,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1480.42,
+   "dur": 54.39,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1542.02,
+   "dur": 30.41,
+   "args": {
+    "tile": 30
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1577.94,
+   "dur": 10.36,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1595.42,
+   "dur": 53.3,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1655.22,
+   "dur": 43.05,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1663.83,
+   "dur": 21.52,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1700.8,
+   "dur": 52.74,
+   "args": {
+    "tile": 34
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1711.35,
+   "dur": 26.37,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1759.75,
+   "dur": 21.44,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1764.04,
+   "dur": 10.72,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1788.23,
+   "dur": 39.13,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1836.98,
+   "dur": 10.85,
+   "args": {
+    "tile": 36
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1855.8,
+   "dur": 27.67,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1892.32,
+   "dur": 9.66,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1907.56,
+   "dur": 33.27,
+   "args": {
+    "tile": 38
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1944.86,
+   "dur": 89.19,
+   "args": {
+    "tile": 38
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 8,
+   "ts": 1962.7,
+   "dur": 44.59,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 5.42,
+   "dur": 80.97,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 21.62,
+   "dur": 40.48,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 88.91,
+   "dur": 41.1,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 134.08,
+   "dur": 8.22,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 152.19,
+   "dur": 74.21,
+   "args": {
+    "tile": 3
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 167.04,
+   "dur": 37.11,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 235.5,
+   "dur": 38.03,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 276.49,
+   "dur": 34.02,
+   "args": {
+    "tile": 5
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 283.29,
+   "dur": 17.01,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 318.12,
+   "dur": 10.88,
+   "args": {
+    "tile": 6
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 333.07,
+   "dur": 33.17,
+   "args": {
+    "tile": 6
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 369.15,
+   "dur": 72.45,
+   "args": {
+    "tile": 7
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 383.64,
+   "dur": 36.23,
+   "args": {}
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 443.12,
+   "dur": 21.78,
+   "args": {
+    "tile": 8
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 471.28,
+   "dur": 52.44,
+   "args": {
+    "tile": 9
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 525.22,
+   "dur": 19.21,
+   "args": {
+    "tile": 10
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 546.71,
+   "dur": 34.05,
+   "args": {
+    "tile": 10
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 587.05,
+   "dur": 21.23,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 611.61,
+   "dur": 28.92,
+   "args": {
+    "tile": 12
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 650.32,
+   "dur": 19.51,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 670.91,
+   "dur": 25.03,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 699.0,
+   "dur": 21.04,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 725.55,
+   "dur": 28.67,
+   "args": {
+    "tile": 14
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 756.82,
+   "dur": 16.31,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 776.31,
+   "dur": 10.2,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 791.66,
+   "dur": 83.25,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 879.52,
+   "dur": 33.45,
+   "args": {
+    "tile": 17
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 922.47,
+   "dur": 26.8,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 952.36,
+   "dur": 73.14,
+   "args": {
+    "tile": 19
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 966.99,
+   "dur": 36.57,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1031.63,
+   "dur": 80.41,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1115.58,
+   "dur": 53.99,
+   "args": {
+    "tile": 22
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1174.65,
+   "dur": 12.62,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1195.28,
+   "dur": 59.77,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1256.27,
+   "dur": 88.2,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1346.35,
+   "dur": 67.79,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1423.08,
+   "dur": 9.21,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1433.63,
+   "dur": 17.47,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1461.02,
+   "dur": 81.5,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1477.32,
+   "dur": 40.75,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1545.13,
+   "dur": 37.53,
+   "args": {
+    "tile": 30
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1586.84,
+   "dur": 15.69,
+   "args": {
+    "tile": 31
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1611.48,
+   "dur": 26.91,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1639.78,
+   "dur": 20.25,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1667.22,
+   "dur": 46.06,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1722.15,
+   "dur": 33.86,
+   "args": {
+    "tile": 34
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1760.49,
+   "dur": 48.7,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1818.53,
+   "dur": 62.76,
+   "args": {
+    "tile": 36
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1831.08,
+   "dur": 31.38,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1889.88,
+   "dur": 46.24,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1942.93,
+   "dur": 29.38,
+   "args": {
+    "tile": 38
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 9,
+   "ts": 1980.99,
+   "dur": 29.88,
+   "args": {
+    "tile": 39
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 15.15,
+   "dur": 42.58,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 61.63,
+   "dur": 42.56,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 113.37,
+   "dur": 19.48,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 135.14,
+   "dur": 10.32,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 148.6,
+   "dur": 77.53,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 234.94,
+   "dur": 46.69,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 244.28,
+   "dur": 23.34,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 284.9,
+   "dur": 44.97,
+   "args": {
+    "tile": 5
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 293.89,
+   "dur": 22.48,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 334.42,
+   "dur": 10.18,
+   "args": {
+    "tile": 6
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 352.44,
+   "dur": 67.61,
+   "args": {
+    "tile": 7
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 365.96,
+   "dur": 33.81,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 424.11,
+   "dur": 21.24,
+   "args": {
+    "tile": 8
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 428.36,
+   "dur": 10.62,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 452.82,
+   "dur": 42.68,
+   "args": {
+    "tile": 9
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 504.23,
+   "dur": 49.62,
+   "args": {
+    "tile": 10
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 514.15,
+   "dur": 24.81,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 558.83,
+   "dur": 69.88,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 632.88,
+   "dur": 60.51,
+   "args": {
+    "tile": 12
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 697.74,
+   "dur": 49.02,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 752.49,
+   "dur": 24.65,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 782.31,
+   "dur": 17.13,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 804.4,
+   "dur": 26.14,
+   "args": {
+    "tile": 16
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 835.16,
+   "dur": 67.59,
+   "args": {
+    "tile": 16
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 848.67,
+   "dur": 33.79,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 905.73,
+   "dur": 77.22,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 984.45,
+   "dur": 17.47,
+   "args": {
+    "tile": 19
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1006.68,
+   "dur": 25.97,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1036.66,
+   "dur": 29.75,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1070.22,
+   "dur": 80.12,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1086.25,
+   "dur": 40.06,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1154.09,
+   "dur": 4.82,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1160.37,
+   "dur": 18.21,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1182.88,
+   "dur": 40.03,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1226.73,
+   "dur": 20.43,
+   "args": {
+    "tile": 24
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1255.32,
+   "dur": 69.74,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1330.07,
+   "dur": 3.44,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1342.27,
+   "dur": 61.74,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1409.5,
+   "dur": 24.5,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1436.3,
+   "dur": 10.06,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1455.92,
+   "dur": 13.67,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1471.98,
+   "dur": 68.7,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1485.72,
+   "dur": 34.35,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1546.92,
+   "dur": 59.24,
+   "args": {
+    "tile": 30
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1608.53,
+   "dur": 16.48,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1631.77,
+   "dur": 58.2,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1643.41,
+   "dur": 29.1,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1697.09,
+   "dur": 77.99,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1780.82,
+   "dur": 44.36,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1789.69,
+   "dur": 22.18,
+   "args": {}
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1830.54,
+   "dur": 18.98,
+   "args": {
+    "tile": 36
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1852.96,
+   "dur": 3.29,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1862.64,
+   "dur": 3.45,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1870.09,
+   "dur": 24.33,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1898.1,
+   "dur": 59.14,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 10,
+   "ts": 1962.4,
+   "dur": 55.94,
+   "args": {
+    "tile": 39
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 14.99,
+   "dur": 57.37,
+   "args": {
+    "tile": 0
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 80.94,
+   "dur": 10.91,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 93.9,
+   "dur": 10.59,
+   "args": {
+    "tile": 1
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 110.31,
+   "dur": 12.35,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 124.8,
+   "dur": 81.01,
+   "args": {
+    "tile": 2
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 211.21,
+   "dur": 25.32,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 238.91,
+   "dur": 22.16,
+   "args": {
+    "tile": 4
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 262.83,
+   "dur": 21.1,
+   "args": {
+    "tile": 5
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 285.48,
+   "dur": 61.94,
+   "args": {
+    "tile": 5
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 355.76,
+   "dur": 76.74,
+   "args": {
+    "tile": 7
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 437.21,
+   "dur": 13.39,
+   "args": {
+    "tile": 8
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 452.95,
+   "dur": 29.83,
+   "args": {
+    "tile": 9
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 492.75,
+   "dur": 50.07,
+   "args": {
+    "tile": 9
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 550.58,
+   "dur": 53.06,
+   "args": {
+    "tile": 11
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 605.47,
+   "dur": 58.46,
+   "args": {
+    "tile": 12
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 671.64,
+   "dur": 77.99,
+   "args": {
+    "tile": 13
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 757.85,
+   "dur": 26.15,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 787.7,
+   "dur": 11.72,
+   "args": {
+    "tile": 15
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 807.5,
+   "dur": 78.69,
+   "args": {
+    "tile": 16
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 823.24,
+   "dur": 39.34,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 891.62,
+   "dur": 10.05,
+   "args": {
+    "tile": 17
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 909.82,
+   "dur": 33.28,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 949.97,
+   "dur": 52.63,
+   "args": {
+    "tile": 18
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1003.64,
+   "dur": 10.43,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1020.52,
+   "dur": 12.7,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1039.79,
+   "dur": 26.16,
+   "args": {
+    "tile": 20
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1074.22,
+   "dur": 67.81,
+   "args": {
+    "tile": 21
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1087.78,
+   "dur": 33.9,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1151.64,
+   "dur": 35.69,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1158.78,
+   "dur": 17.85,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1192.83,
+   "dur": 10.48,
+   "args": {
+    "tile": 23
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1205.77,
+   "dur": 11.86,
+   "args": {
+    "tile": 24
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1225.91,
+   "dur": 44.66,
+   "args": {
+    "tile": 24
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1274.96,
+   "dur": 8.62,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1288.58,
+   "dur": 6.38,
+   "args": {
+    "tile": 25
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1300.66,
+   "dur": 31.37,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1333.54,
+   "dur": 35.15,
+   "args": {
+    "tile": 26
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1377.71,
+   "dur": 29.63,
+   "args": {
+    "tile": 27
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1416.92,
+   "dur": 3.42,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1424.87,
+   "dur": 49.31,
+   "args": {
+    "tile": 28
+   }
+  },
+  {
+   "name": "h2d_copy",
+   "cat": "memcpy",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1480.08,
+   "dur": 22.27,
+   "args": {
+    "tile": 29
+   }
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1506.77,
+   "dur": 4.46,
+   "args": {
+    "tile": 30
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1517.41,
+   "dur": 21.29,
+   "args": {
+    "tile": 30
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1547.6,
+   "dur": 71.68,
+   "args": {
+    "tile": 30
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1561.94,
+   "dur": 35.84,
+   "args": {}
+  },
+  {
+   "name": "barrier",
+   "cat": "sync",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1623.73,
+   "dur": 11.49,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1638.0,
+   "dur": 50.68,
+   "args": {
+    "tile": 32
+   }
+  },
+  {
+   "name": "inner_mma",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1648.14,
+   "dur": 25.34,
+   "args": {}
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1698.35,
+   "dur": 34.28,
+   "args": {
+    "tile": 33
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1740.64,
+   "dur": 30.64,
+   "args": {
+    "tile": 34
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1779.06,
+   "dur": 45.39,
+   "args": {
+    "tile": 35
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1827.79,
+   "dur": 40.49,
+   "args": {
+    "tile": 36
+   }
+  },
+  {
+   "name": "compute_tile",
+   "cat": "compute",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1877.74,
+   "dur": 37.04,
+   "args": {
+    "tile": 37
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1919.49,
+   "dur": 44.01,
+   "args": {
+    "tile": 38
+   }
+  },
+  {
+   "name": "gemm_kernel",
+   "cat": "kernel",
+   "ph": "X",
+   "pid": 0,
+   "tid": 11,
+   "ts": 1970.21,
+   "dur": 57.32,
+   "args": {
+    "tile": 39
+   }
+  }
+ ],
+ "displayTimeUnit": "ms"
+}
