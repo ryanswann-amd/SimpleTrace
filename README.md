@@ -66,10 +66,21 @@ Clone and run the script directly to pick a specific version:
 Set `EDITOR_CMD=code` to target VSCode explicitly, or `REPO=owner/fork` to
 install from a fork. After installing, run "Developer: Reload Window".
 
+### Download and install the latest .vsix directly
+
+This always points at the most recent release, no script involved:
+
+```bash
+curl -fsSL -o simple-trace.vsix \
+  https://github.com/ryanswann-amd/SimpleTrace/releases/latest/download/simple-trace.vsix
+cursor --install-extension simple-trace.vsix   # or: code --install-extension ...
+```
+
 ### Manual install
 
 Download `simple-trace.vsix` from the
-[Releases page](https://github.com/ryanswann-amd/SimpleTrace/releases), then:
+[Releases page](https://github.com/ryanswann-amd/SimpleTrace/releases), then use
+"Extensions: Install from VSIX..." in the command palette, or:
 
 ```bash
 cursor --install-extension simple-trace.vsix   # or: code --install-extension ...
