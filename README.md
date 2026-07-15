@@ -34,8 +34,12 @@ code that produced it.
 - Tracks grouped by process and ordered by `thread_sort_index`.
 - Slices colored by category (`cat`) with a clickable legend to toggle
   categories on and off.
+- **Flow arrows** (`s`/`t`/`f` events) drawn between slices to show
+  producer→consumer dependencies, colored by category. Hover a slice to
+  spotlight the flows touching it; toggle them off with the "flow arrows"
+  control or per-category in the legend.
 - Hover or click any slice to see its name, category, track, start time,
-  duration, and all `args`.
+  duration, flow count, and all `args`.
 - Slice-name filter box for quickly isolating events.
 - "Merge tracks by name" toggle to collapse identically named threads into a
   single lane.
@@ -127,8 +131,11 @@ microseconds (the Chrome-trace convention). The following event types are used:
 - `B` / `E` (begin / end): paired into slices per track, with nesting support.
 - `M` (metadata): `process_name`, `thread_name`, and `thread_sort_index` set
   track labels and ordering.
+- `s` / `t` / `f` (flow): drawn as arrows between the slices they bind to,
+  colored by `cat`.
 
-Other event phases (instant, counter, flow) are currently ignored.
+Other event phases (instant, counter, async, sample, object) are currently
+ignored.
 
 For the precise, field-by-field definition of what Simple Trace reads, see
 [docs/TRACE_FORMAT.md](docs/TRACE_FORMAT.md).

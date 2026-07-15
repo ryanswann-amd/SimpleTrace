@@ -1,0 +1,27 @@
+{
+  "displayTimeUnit": "ms",
+  "traceEvents": [
+    { "name": "process_name", "ph": "M", "pid": 0, "args": { "name": "device" } },
+    { "name": "thread_name", "ph": "M", "pid": 0, "tid": 0, "args": { "name": "producer" } },
+    { "name": "thread_sort_index", "ph": "M", "pid": 0, "tid": 0, "args": { "sort_index": 0 } },
+    { "name": "thread_name", "ph": "M", "pid": 0, "tid": 1, "args": { "name": "consumer A" } },
+    { "name": "thread_sort_index", "ph": "M", "pid": 0, "tid": 1, "args": { "sort_index": 1 } },
+    { "name": "thread_name", "ph": "M", "pid": 0, "tid": 2, "args": { "name": "consumer B" } },
+    { "name": "thread_sort_index", "ph": "M", "pid": 0, "tid": 2, "args": { "sort_index": 2 } },
+
+    { "name": "produce", "cat": "stage", "ph": "X", "pid": 0, "tid": 0, "ts": 0, "dur": 20, "args": { "tile": "0x1000" } },
+    { "name": "produce", "cat": "stage", "ph": "X", "pid": 0, "tid": 0, "ts": 30, "dur": 20, "args": { "tile": "0x2000" } },
+    { "name": "consume", "cat": "compute", "ph": "X", "pid": 0, "tid": 1, "ts": 60, "dur": 40, "args": { "tile": "0x1000" } },
+    { "name": "consume", "cat": "compute", "ph": "X", "pid": 0, "tid": 2, "ts": 70, "dur": 40, "args": { "tile": "0x1000" } },
+    { "name": "consume", "cat": "compute", "ph": "X", "pid": 0, "tid": 1, "ts": 110, "dur": 40, "args": { "tile": "0x2000" } },
+
+    { "name": "produce->consume", "cat": "dep_same_l2", "ph": "s", "id": 0, "pid": 0, "tid": 0, "ts": 10, "args": { "tile": "0x1000" } },
+    { "name": "produce->consume", "cat": "dep_same_l2", "ph": "f", "bp": "e", "id": 0, "pid": 0, "tid": 1, "ts": 60 },
+
+    { "name": "produce->consume", "cat": "dep_cross_l2", "ph": "s", "id": 1, "pid": 0, "tid": 0, "ts": 10, "args": { "tile": "0x1000" } },
+    { "name": "produce->consume", "cat": "dep_cross_l2", "ph": "f", "bp": "e", "id": 1, "pid": 0, "tid": 2, "ts": 70 },
+
+    { "name": "produce->consume", "cat": "dep_same_l2", "ph": "s", "id": 2, "pid": 0, "tid": 0, "ts": 40, "args": { "tile": "0x2000" } },
+    { "name": "produce->consume", "cat": "dep_same_l2", "ph": "f", "bp": "e", "id": 2, "pid": 0, "tid": 1, "ts": 110 }
+  ]
+}

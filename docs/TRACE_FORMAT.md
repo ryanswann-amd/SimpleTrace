@@ -99,12 +99,44 @@ are used; all are optional.
 { "name": "thread_sort_index", "ph": "M", "pid": 0, "tid": 3, "args": { "sort_index": 3 } }
 ```
 
+### `s` / `t` / `f` — flow events
+
+Flow events draw **arrows between slices** to show a directed relationship such
+as a producer → consumer dependency. A flow is a sequence of points that share
+an `id`, in one of three phases: `s` (start), `t` (step), and `f` (finish). An
+arrow is drawn between each consecutive pair of points in `ts` order.
+
+| Field | Type            | Meaning                                                                       |
+| ----- | --------------- | ----------------------------------------------------------------------------- |
+| `id`  | number / string | Flow id. Points sharing an `id` (within a `cat`) form one flow. `bind_id` is also accepted. |
+| `cat` | string          | Category. Colors the arrow and appears in the legend; toggle it to hide those arrows. |
+| `ts`  | number          | Position of this point in time (microseconds).                                |
+| `pid` / `tid` | number / string | The track the point sits on.                                          |
+
+- Each point binds to the **enclosing slice** on its `(pid, tid)` track — the
+  slice whose `[ts, ts + dur]` interval contains the flow's `ts` (this matches a
+  Perfetto `"bp": "e"` flow). If no slice contains it, the point falls back to
+  the track's row at that time.
+- Flow ids are scoped by `cat` (the Chrome-trace convention), so different
+  categories may reuse the same id.
+- Arrows are colored by `cat` using the same palette as slices, and each flow
+  category is listed in the legend. Hovering a slice highlights the flows that
+  touch it and dims the rest; the slice tooltip shows how many flows it touches.
+- Use the **flow arrows** toolbar toggle to show/hide all arrows at once.
+
+```json
+{ "name": "dep", "cat": "dep_cross_l2", "ph": "s", "id": 7, "pid": 0, "tid": 0, "ts": 10 }
+{ "name": "dep", "cat": "dep_cross_l2", "ph": "f", "bp": "e", "id": 7, "pid": 0, "tid": 1, "ts": 60 }
+```
+
+See [`examples/flows.trace.json`](../examples/flows.trace.json) for a
+producer→consumer fan-out with two flow categories.
+
 ### Ignored phases
 
 The following phases are parsed without error but are **not** drawn:
-instant (`i` / `I`), counter (`C`), async (`b` / `n` / `e`), flow
-(`s` / `t` / `f`), sample (`P`), object (`N` / `O` / `D`), and metadata names
-other than the three listed above.
+instant (`i` / `I`), counter (`C`), async (`b` / `n` / `e`), sample (`P`),
+object (`N` / `O` / `D`), and metadata names other than the three listed above.
 
 ## Tracks, grouping, and ordering
 
