@@ -13,6 +13,7 @@
   const searchEl = document.getElementById("search");
   const fitBtn = document.getElementById("fit");
   const mergeChk = document.getElementById("mergeTracks");
+  const flowsChk = document.getElementById("showFlows");
   const helpEl = document.getElementById("help");
   helpEl.textContent =
     "wheel = scroll up/down · +/− = zoom in/out · ctrl+wheel = zoom · shift+wheel = pan horizontally · drag = pan · double-click = fit";
@@ -32,6 +33,7 @@
   let pinned = null; // clicked slice
   let disabledCats = new Set();
   let filterText = "";
+  let showFlows = true;
 
   // ---------- color palette ----------
   // Categories are colored from a fixed categorical palette in order of first
@@ -90,6 +92,9 @@
     const tracksMap = new Map(); // key -> track
     const openStacks = new Map(); // key -> [event] for B/E matching
     const cats = new Set();
+    // flow (s/t/f) points grouped by their (category, id) namespace. Chrome
+    // scopes a flow id by its category, so different categories may reuse ids.
+    const flowPts = new Map(); // "cat\0id" -> [{ pid, tid, ts, cat, name }]
 
     let tMin = Infinity;
     let tMax = -Infinity;
@@ -139,8 +144,22 @@
           const b = st.pop();
           addSlice(pid, tid, b.name, b.cat, +b.ts || 0, (+e.ts || 0) - (+b.ts || 0), b.args || e.args);
         }
+      } else if (ph === "s" || ph === "t" || ph === "f") {
+        // flow event: connects slices across tracks by a shared id
+        const id = e.id != null ? e.id : e.bind_id;
+        if (id == null) continue;
+        const cat = e.cat != null ? e.cat : "(none)";
+        const gk = cat + "\u0000" + id;
+        if (!flowPts.has(gk)) flowPts.set(gk, []);
+        flowPts.get(gk).push({
+          pid,
+          tid,
+          ts: +e.ts || 0,
+          cat,
+          name: e.name,
+        });
       }
-      // instant (i/I), counters (C), flows (s/t/f) are ignored for now
+      // instant (i/I), counters (C) are ignored for now
     }
 
     // assign names / sort index
@@ -170,6 +189,36 @@
       return a.tid - b.tid;
     });
 
+    // resolve flow endpoints into concrete arrow segments. Each point binds to
+    // the enclosing slice on its (pid, tid) track (the one whose [ts, end]
+    // contains the flow ts); a Perfetto "bp":"e" flow binds to that slice. If
+    // none contains it, the point falls back to the track (row) at that time.
+    function bindPoint(p) {
+      const track = tracksMap.get(p.pid + ":" + p.tid) || null;
+      let slice = null;
+      if (track) {
+        for (const s of track.slices) {
+          if (s.ts > p.ts) break; // slices are sorted by ts ascending
+          if (s.end >= p.ts) slice = s; // keep the innermost (latest) match
+        }
+      }
+      return { track, slice, ts: p.ts };
+    }
+
+    const flows = [];
+    const flowCats = new Set();
+    for (const pts of flowPts.values()) {
+      if (pts.length < 2) continue;
+      pts.sort((a, b) => a.ts - b.ts);
+      const cat = pts[0].cat;
+      const name = pts[0].name;
+      flowCats.add(String(cat));
+      cats.add(String(cat));
+      for (let i = 0; i < pts.length - 1; i++) {
+        flows.push({ cat, name, from: bindPoint(pts[i]), to: bindPoint(pts[i + 1]) });
+      }
+    }
+
     if (!isFinite(tMin)) {
       tMin = 0;
       tMax = 1;
@@ -180,6 +229,8 @@
     return {
       tracks,
       cats: Array.from(cats).sort(),
+      flows,
+      flowCats,
       tMin,
       tMax,
       sliceCount,
@@ -210,7 +261,11 @@
             maxDepth: 1,
           });
         const m = byName.get(gk);
-        for (const s of t.slices) m.slices.push(s);
+        t._dtrack = m; // original track -> merged display track (for flows)
+        for (const s of t.slices) {
+          s._dtrack = m;
+          m.slices.push(s);
+        }
       }
       displayTracks = Array.from(byName.values());
       for (const t of displayTracks) {
@@ -247,6 +302,10 @@
         lastPid = t.pid;
       }
       const h = t.maxDepth * SLICE_H + TRACK_GAP;
+      // remember where this display track sits so flow endpoints can be placed
+      t.rowY = y;
+      t._dtrack = t;
+      for (const s of t.slices) s._dtrack = t;
       rows.push({ type: "track", y, h, track: t });
       y += h;
     }
@@ -398,6 +457,9 @@
         }
       }
     }
+
+    // flow arrows (producer -> consumer), still inside the plot clip
+    drawFlowArrows(contentTop, H, W);
     ctx.restore();
 
     // gutter (track labels) — drawn after clip released
@@ -477,6 +539,51 @@
     }
   }
 
+  // screen position of a flow endpoint: the center of the slice it binds to
+  // (or the track row at that time if it did not fall inside a slice).
+  function flowXY(ep, contentTop) {
+    const dt = ep.slice ? ep.slice._dtrack : ep.track ? ep.track._dtrack : null;
+    if (!dt || dt.rowY == null) return null;
+    const depth = ep.slice ? ep.slice.depth : 0;
+    const y =
+      contentTop + dt.rowY - view.scrollY + depth * SLICE_H + (SLICE_H - 1) / 2;
+    return { x: timeToX(ep.ts), y };
+  }
+
+  function drawFlowArrows(contentTop, H, W) {
+    if (!showFlows || !model.flows || !model.flows.length) return;
+    const hi = pinned || pendingHover;
+    const hiSlice = hi ? hi.slice : null;
+    for (const fl of model.flows) {
+      if (disabledCats.has(String(fl.cat))) continue;
+      const a = flowXY(fl.from, contentTop);
+      const b = flowXY(fl.to, contentTop);
+      if (!a || !b) continue;
+      if ((a.y < contentTop && b.y < contentTop) || (a.y > H && b.y > H)) continue;
+      if ((a.x < GUTTER && b.x < GUTTER) || (a.x > W && b.x > W)) continue;
+      const on = hiSlice && (fl.from.slice === hiSlice || fl.to.slice === hiSlice);
+      ctx.globalAlpha = hiSlice ? (on ? 0.95 : 0.05) : 0.55;
+      const col = catColor(fl.cat);
+      ctx.strokeStyle = col;
+      ctx.fillStyle = col;
+      ctx.lineWidth = on ? 1.8 : 1;
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.stroke();
+      const ang = Math.atan2(b.y - a.y, b.x - a.x);
+      const ah = on ? 7 : 5;
+      ctx.beginPath();
+      ctx.moveTo(b.x, b.y);
+      ctx.lineTo(b.x - ah * Math.cos(ang - 0.4), b.y - ah * Math.sin(ang - 0.4));
+      ctx.lineTo(b.x - ah * Math.cos(ang + 0.4), b.y - ah * Math.sin(ang + 0.4));
+      ctx.closePath();
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    ctx.lineWidth = 1;
+  }
+
   function clipText(text, maxW) {
     if (!text) return "";
     if (ctx.measureText(text).width <= maxW) return text;
@@ -535,6 +642,12 @@
     rows2.push(row("start", fmtTime(s.ts - model.tMin)));
     rows2.push(row("duration", fmtDur(s.dur)));
     rows2.push(row("wall", fmtTime(s.ts) + " → " + fmtTime(s.end)));
+    if (model.flows && model.flows.length) {
+      let nf = 0;
+      for (const fl of model.flows)
+        if (fl.from.slice === s || fl.to.slice === s) nf++;
+      if (nf) rows2.push(row("flows", nf));
+    }
     if (s.args && typeof s.args === "object") {
       for (const k of Object.keys(s.args)) {
         rows2.push(row(k, s.args[k]));
@@ -691,6 +804,11 @@
     invalidateRows();
     draw();
   });
+  if (flowsChk)
+    flowsChk.addEventListener("change", () => {
+      showFlows = flowsChk.checked;
+      draw();
+    });
 
   window.addEventListener("keydown", (e) => {
     if (!model) return;
@@ -746,8 +864,11 @@
       for (const k in catColorCache) delete catColorCache[k];
       catColorNext = 0;
       buildLegend();
-      const nProc = Object.keys(model.procNames).length || 1;
-      statsEl.textContent = `${model.sliceCount.toLocaleString()} slices · ${model.tracks.length} tracks · span ${fmtTime(
+      if (flowsChk) showFlows = flowsChk.checked;
+      const flowTxt = model.flows.length
+        ? ` · ${model.flows.length.toLocaleString()} flows`
+        : "";
+      statsEl.textContent = `${model.sliceCount.toLocaleString()} slices · ${model.tracks.length} tracks${flowTxt} · span ${fmtTime(
         model.tMax - model.tMin
       )}`;
       resize();
