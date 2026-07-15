@@ -219,9 +219,29 @@
       }
     }
 
+    // Rebase all timestamps relative to the earliest event. Some traces use
+    // huge absolute timestamps (e.g. steady-clock ns/us ~1e14); left as-is, the
+    // gridline loop's `t += step` can stop advancing once step falls below the
+    // floating-point ULP at that magnitude, freezing rendering. Working in a
+    // small relative range avoids that. tBase preserves the absolute origin.
+    let tBase = 0;
     if (!isFinite(tMin)) {
       tMin = 0;
       tMax = 1;
+    } else {
+      tBase = tMin;
+      for (const t of tracks) {
+        for (const s of t.slices) {
+          s.ts -= tBase;
+          s.end -= tBase;
+        }
+      }
+      for (const fl of flows) {
+        fl.from.ts -= tBase;
+        fl.to.ts -= tBase;
+      }
+      tMax -= tBase;
+      tMin = 0;
     }
     let sliceCount = 0;
     for (const t of tracks) sliceCount += t.slices.length;
@@ -233,6 +253,7 @@
       flowCats,
       tMin,
       tMax,
+      tBase,
       sliceCount,
       procNames,
     };
@@ -411,10 +432,15 @@
     const targetPx = 110;
     const step = niceStep(targetPx / view.pxPerUs);
     const first = Math.ceil(view.start / step) * step;
+    // index-based loop (with a generous cap) so it can never fail to advance,
+    // regardless of float precision.
+    const maxLines = Math.ceil((W - GUTTER) / targetPx) + 8;
     ctx.strokeStyle = border;
     ctx.lineWidth = 1;
     ctx.beginPath();
-    for (let t = first; timeToX(t) < W; t += step) {
+    for (let i = 0; i < maxLines; i++) {
+      const t = first + i * step;
+      if (timeToX(t) >= W) break;
       const x = Math.round(timeToX(t)) + 0.5;
       ctx.moveTo(x, contentTop);
       ctx.lineTo(x, H);
@@ -519,7 +545,9 @@
     ctx.fillStyle = fg;
     ctx.font = "10px sans-serif";
     ctx.textBaseline = "middle";
-    for (let t = first; timeToX(t) < W; t += step) {
+    for (let i = 0; i < maxLines; i++) {
+      const t = first + i * step;
+      if (timeToX(t) >= W) break;
       const x = timeToX(t);
       if (x < GUTTER) continue;
       ctx.strokeStyle = border;
@@ -641,7 +669,8 @@
     rows2.push(row("track", s.track.name));
     rows2.push(row("start", fmtTime(s.ts - model.tMin)));
     rows2.push(row("duration", fmtDur(s.dur)));
-    rows2.push(row("wall", fmtTime(s.ts) + " → " + fmtTime(s.end)));
+    const base = model.tBase || 0;
+    rows2.push(row("wall", fmtTime(s.ts + base) + " → " + fmtTime(s.end + base)));
     if (model.flows && model.flows.length) {
       let nf = 0;
       for (const fl of model.flows)
