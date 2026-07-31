@@ -14,6 +14,7 @@
   const fitBtn = document.getElementById("fit");
   const mergeChk = document.getElementById("mergeTracks");
   const flowsChk = document.getElementById("showFlows");
+  const colorByEl = document.getElementById("colorBy");
   const helpEl = document.getElementById("help");
   helpEl.textContent =
     "wheel = scroll up/down · +/− = zoom in/out · ctrl+wheel = zoom · shift+wheel = pan horizontally · drag = pan · double-click = fit";
@@ -31,33 +32,129 @@
   let view = { start: 0, pxPerUs: 1, scrollY: 0 }; // start in us
   let hover = null; // slice under cursor
   let pinned = null; // clicked slice
-  let disabledCats = new Set();
+  let colorKey = "cat"; // property slices are colored by
+  let hiddenByKey = new Map(); // colorKey -> Set of hidden value keys
   let filterText = "";
   let showFlows = true;
 
-  // ---------- color palette ----------
-  // Categories are colored from a fixed categorical palette in order of first
-  // appearance, falling back to a deterministic hashed hue if it is exhausted.
+  // ---------- color by property ----------
+  // Slices and flows are colored by one property at a time: a built-in field or
+  // any key seen in an event's `args`. Each distinct value of that property gets
+  // a color from a fixed categorical palette in order of first appearance, and
+  // generated hues once the palette is exhausted. Events that do not carry the
+  // property at all share one neutral default color.
   const PALETTE = [
     "#3b76c0", "#e08a1e", "#2f9e6f", "#8e6fbf", "#c0504d",
     "#4bacc6", "#d6a419", "#7f8c8d", "#5b9bd5", "#e06c9f",
     "#70ad47", "#a6761d", "#9c6ade", "#d95f5f", "#3fa7a0",
   ];
-  const catColorCache = {};
-  let catColorNext = 0;
-  function catColor(cat) {
-    const key = cat == null ? "(none)" : String(cat);
-    if (catColorCache[key]) return catColorCache[key];
-    let color;
-    if (catColorNext < PALETTE.length) {
-      color = PALETTE[catColorNext++];
-    } else {
-      let h = 0;
-      for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) >>> 0;
-      color = `hsl(${h % 360}, 55%, 52%)`;
+  const DEFAULT_COLOR = "#565c63";
+  const BUILTIN_KEYS = ["cat", "name", "track", "process", "pid", "tid"];
+  const ARGS_PREFIX = "args.";
+  const MISSING_LABEL = "(none)";
+  // A NUL keeps the missing bucket from colliding with a real value that
+  // happens to be spelled like MISSING_LABEL.
+  const MISSING_KEY = "\u0000missing";
+  const LEGEND_MAX = 48; // values shown before the legend is truncated
+
+  // Only primitives make sense as a color dimension; objects, arrays, null and
+  // the empty string all count as "does not have this property".
+  function scalarValue(v) {
+    if (v == null || typeof v === "object") return null;
+    const s = String(v);
+    return s === "" ? null : s;
+  }
+
+  // rec is a slice or a flow; both carry name/cat/args and a resolved track.
+  function propValue(rec, key) {
+    if (!rec) return null;
+    if (key.slice(0, ARGS_PREFIX.length) === ARGS_PREFIX) {
+      if (!rec.args || typeof rec.args !== "object") return null;
+      return scalarValue(rec.args[key.slice(ARGS_PREFIX.length)]);
     }
-    catColorCache[key] = color;
+    switch (key) {
+      case "cat":
+        return scalarValue(rec.cat);
+      case "name":
+        return scalarValue(rec.name);
+      case "track":
+        return rec.track ? scalarValue(rec.track.name) : null;
+      case "process":
+        return rec.track ? scalarValue(rec.track.procName) : null;
+      case "pid":
+        return rec.track ? scalarValue(rec.track.pid) : null;
+      case "tid":
+        return rec.track ? scalarValue(rec.track.tid) : null;
+      default:
+        return null;
+    }
+  }
+
+  function valueKey(v) {
+    return v == null ? MISSING_KEY : v;
+  }
+
+  // Distinct values of a property, in order of first appearance, with counts.
+  // Computed on demand and cached on the model, so switching color dimensions
+  // costs one pass over the events at most once per dimension.
+  function domainFor(key) {
+    let d = model.domains.get(key);
+    if (d) return d;
+    d = { values: [], index: new Map(), counts: new Map(), colors: new Map(), missing: 0 };
+    const tally = (rec) => {
+      const v = propValue(rec, key);
+      if (v == null) {
+        d.missing++;
+        return;
+      }
+      const n = d.counts.get(v);
+      if (n == null) {
+        d.index.set(v, d.values.length);
+        d.values.push(v);
+        d.counts.set(v, 1);
+      } else {
+        d.counts.set(v, n + 1);
+      }
+    };
+    for (const t of model.tracks) for (const s of t.slices) tally(s);
+    for (const fl of model.flows) tally(fl);
+    model.domains.set(key, d);
+    return d;
+  }
+
+  function colorForValue(v) {
+    if (v == null) return DEFAULT_COLOR;
+    const d = domainFor(colorKey);
+    const cached = d.colors.get(v);
+    if (cached) return cached;
+    let i = d.index.get(v);
+    let color;
+    if (i == null) {
+      // not part of the domain (shouldn't happen); hash so it is at least stable
+      let h = 0;
+      for (let j = 0; j < v.length; j++) h = (h * 31 + v.charCodeAt(j)) >>> 0;
+      i = PALETTE.length + (h % 997);
+    }
+    if (i < PALETTE.length) {
+      color = PALETTE[i];
+    } else {
+      // past the palette, walk the hue circle by the golden angle so even
+      // hundreds of values stay visually separable, alternating lightness
+      const n = i - PALETTE.length;
+      const hue = (n * 137.508) % 360;
+      color = `hsl(${hue.toFixed(1)}, 58%, ${n % 2 ? 45 : 60}%)`;
+    }
+    d.colors.set(v, color);
     return color;
+  }
+
+  function hiddenSet() {
+    let s = hiddenByKey.get(colorKey);
+    if (!s) {
+      s = new Set();
+      hiddenByKey.set(colorKey, s);
+    }
+    return s;
   }
 
   // ---------- time formatting (raw values assumed microseconds) ----------
@@ -91,10 +188,10 @@
     const threadSort = {}; // pid:tid -> sort index
     const tracksMap = new Map(); // key -> track
     const openStacks = new Map(); // key -> [event] for B/E matching
-    const cats = new Set();
+    const argKeys = new Set(); // every `args` key seen, offered as a color dimension
     // flow (s/t/f) points grouped by their (category, id) namespace. Chrome
     // scopes a flow id by its category, so different categories may reuse ids.
-    const flowPts = new Map(); // "cat\0id" -> [{ pid, tid, ts, cat, name }]
+    const flowPts = new Map(); // "cat\0id" -> [{ pid, tid, ts, cat, name, args }]
 
     let tMin = Infinity;
     let tMax = -Infinity;
@@ -109,12 +206,16 @@
       return t;
     }
 
+    function noteArgKeys(args) {
+      if (!args || typeof args !== "object") return;
+      for (const k of Object.keys(args)) argKeys.add(k);
+    }
+
     function addSlice(pid, tid, name, cat, ts, dur, args) {
       if (dur < 0) dur = 0;
       const t = trackFor(pid, tid);
       t.slices.push({ name, cat, ts, dur, end: ts + dur, args, track: t, depth: 0 });
-      if (cat != null) cats.add(String(cat));
-      else cats.add("(none)");
+      noteArgKeys(args);
       if (ts < tMin) tMin = ts;
       if (ts + dur > tMax) tMax = ts + dur;
     }
@@ -151,12 +252,14 @@
         const cat = e.cat != null ? e.cat : "(none)";
         const gk = cat + "\u0000" + id;
         if (!flowPts.has(gk)) flowPts.set(gk, []);
+        noteArgKeys(e.args);
         flowPts.get(gk).push({
           pid,
           tid,
           ts: +e.ts || 0,
           cat,
           name: e.name,
+          args: e.args,
         });
       }
       // instant (i/I), counters (C) are ignored for now
@@ -213,9 +316,12 @@
       const cat = pts[0].cat;
       const name = pts[0].name;
       flowCats.add(String(cat));
-      cats.add(String(cat));
       for (let i = 0; i < pts.length - 1; i++) {
-        flows.push({ cat, name, from: bindPoint(pts[i]), to: bindPoint(pts[i + 1]) });
+        const from = bindPoint(pts[i]);
+        const to = bindPoint(pts[i + 1]);
+        // `track` mirrors the field slices carry, so a flow resolves the same
+        // color-by properties as a slice does.
+        flows.push({ cat, name, args: pts[i].args, track: from.track, from, to });
       }
     }
 
@@ -248,7 +354,8 @@
 
     return {
       tracks,
-      cats: Array.from(cats).sort(),
+      argKeys: Array.from(argKeys).sort(),
+      domains: new Map(), // color-by property -> value domain, filled on demand
       flows,
       flowCats,
       tMin,
@@ -449,6 +556,7 @@
 
     // slices
     const filter = filterText.toLowerCase();
+    const hidden = hiddenSet();
     hover = null;
     const minVisT = view.start;
     const maxVisT = xToTime(W);
@@ -459,8 +567,8 @@
       const t = row.track;
       for (const s of t.slices) {
         if (s.end < minVisT || s.ts > maxVisT) continue;
-        const catKey = s.cat == null ? "(none)" : String(s.cat);
-        if (disabledCats.has(catKey)) continue;
+        const colorVal = propValue(s, colorKey);
+        if (hidden.has(valueKey(colorVal))) continue;
         if (filter && s.name.toLowerCase().indexOf(filter) === -1) continue;
         let x0 = timeToX(s.ts);
         let x1 = timeToX(s.end);
@@ -469,7 +577,7 @@
         if (w < 1) w = 1;
         const y = rowTop + s.depth * SLICE_H;
         if (y + SLICE_H < contentTop || y > H) continue;
-        ctx.fillStyle = catColor(s.cat);
+        ctx.fillStyle = colorForValue(colorVal);
         ctx.fillRect(x0, y, w, SLICE_H - 1);
         // label if wide enough
         if (w > 28) {
@@ -582,8 +690,10 @@
     if (!showFlows || !model.flows || !model.flows.length) return;
     const hi = pinned || pendingHover;
     const hiSlice = hi ? hi.slice : null;
+    const hidden = hiddenSet();
     for (const fl of model.flows) {
-      if (disabledCats.has(String(fl.cat))) continue;
+      const colorVal = propValue(fl, colorKey);
+      if (hidden.has(valueKey(colorVal))) continue;
       const a = flowXY(fl.from, contentTop);
       const b = flowXY(fl.to, contentTop);
       if (!a || !b) continue;
@@ -591,7 +701,7 @@
       if ((a.x < GUTTER && b.x < GUTTER) || (a.x > W && b.x > W)) continue;
       const on = hiSlice && (fl.from.slice === hiSlice || fl.to.slice === hiSlice);
       ctx.globalAlpha = hiSlice ? (on ? 0.95 : 0.05) : 0.55;
-      const col = catColor(fl.cat);
+      const col = colorForValue(colorVal);
       ctx.strokeStyle = col;
       ctx.fillStyle = col;
       ctx.lineWidth = on ? 1.8 : 1;
@@ -634,6 +744,7 @@
     const contentTop = RULER_H;
     if (px < GUTTER || py < contentTop) return null;
     const filter = filterText.toLowerCase();
+    const hidden = hiddenSet();
     for (const row of layout.rows) {
       if (row.type !== "track") continue;
       const rowTop = contentTop + row.y - view.scrollY;
@@ -642,8 +753,7 @@
       const t = row.track;
       for (const s of t.slices) {
         if (s.depth !== depth) continue;
-        const catKey = s.cat == null ? "(none)" : String(s.cat);
-        if (disabledCats.has(catKey)) continue;
+        if (hidden.has(valueKey(propValue(s, colorKey)))) continue;
         if (filter && s.name.toLowerCase().indexOf(filter) === -1) continue;
         const x0 = timeToX(s.ts);
         const x1 = Math.max(timeToX(s.end), x0 + 1);
@@ -709,26 +819,73 @@
     tooltip.classList.add("hidden");
   }
 
+  // ---------- color-by dropdown ----------
+  function buildColorByOptions() {
+    if (!colorByEl) return;
+    const keys = BUILTIN_KEYS.concat(model.argKeys.map((k) => ARGS_PREFIX + k));
+    // keep the current dimension across reloads when the new trace still has it
+    if (keys.indexOf(colorKey) === -1) colorKey = "cat";
+    colorByEl.innerHTML = "";
+    for (const k of keys) {
+      const opt = document.createElement("option");
+      opt.value = k;
+      opt.textContent = k;
+      colorByEl.appendChild(opt);
+    }
+    colorByEl.value = colorKey;
+  }
+
   // ---------- legend ----------
+  function compareValues(a, b) {
+    return a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" });
+  }
+
   function buildLegend() {
     legendEl.innerHTML = "";
-    for (const cat of model.cats) {
+    if (!model) return;
+    const d = domainFor(colorKey);
+    const hidden = hiddenSet();
+    let values = d.values.slice();
+    let truncated = 0;
+    // a high-cardinality property (a name or an id) can have thousands of
+    // values; keep the busiest ones so the legend stays usable
+    if (values.length > LEGEND_MAX) {
+      values.sort((a, b) => d.counts.get(b) - d.counts.get(a));
+      truncated = values.length - LEGEND_MAX;
+      values.length = LEGEND_MAX;
+    }
+    values.sort(compareValues);
+
+    const entries = values.map((v) => ({ label: v, value: v, n: d.counts.get(v) }));
+    if (d.missing)
+      entries.push({ label: MISSING_LABEL, value: null, n: d.missing });
+
+    for (const e of entries) {
+      const key = valueKey(e.value);
       const item = document.createElement("div");
-      item.className = "item" + (disabledCats.has(cat) ? " disabled" : "");
+      item.className = "item" + (hidden.has(key) ? " disabled" : "");
+      item.title = `${e.label} — ${e.n.toLocaleString()} events (click to toggle)`;
       const sw = document.createElement("span");
       sw.className = "swatch";
-      sw.style.background = catColor(cat === "(none)" ? null : cat);
+      sw.style.background = colorForValue(e.value);
       const label = document.createElement("span");
-      label.textContent = cat;
+      label.textContent = e.label;
       item.appendChild(sw);
       item.appendChild(label);
       item.onclick = () => {
-        if (disabledCats.has(cat)) disabledCats.delete(cat);
-        else disabledCats.add(cat);
+        if (hidden.has(key)) hidden.delete(key);
+        else hidden.add(key);
         buildLegend();
         draw();
       };
       legendEl.appendChild(item);
+    }
+    if (truncated) {
+      const more = document.createElement("div");
+      more.className = "more";
+      more.textContent = `+${truncated.toLocaleString()} more values`;
+      more.title = `${d.values.length.toLocaleString()} distinct values of ${colorKey}; showing the ${LEGEND_MAX} most common`;
+      legendEl.appendChild(more);
     }
   }
 
@@ -838,6 +995,12 @@
       showFlows = flowsChk.checked;
       draw();
     });
+  if (colorByEl)
+    colorByEl.addEventListener("change", () => {
+      colorKey = colorByEl.value;
+      buildLegend();
+      draw();
+    });
 
   window.addEventListener("keydown", (e) => {
     if (!model) return;
@@ -887,11 +1050,9 @@
         return;
       }
       invalidateRows();
-      disabledCats = new Set();
+      hiddenByKey = new Map();
       pinned = null;
-      // reset category color assignment for the new trace
-      for (const k in catColorCache) delete catColorCache[k];
-      catColorNext = 0;
+      buildColorByOptions();
       buildLegend();
       if (flowsChk) showFlows = flowsChk.checked;
       const flowTxt = model.flows.length

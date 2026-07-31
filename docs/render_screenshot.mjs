@@ -45,6 +45,8 @@ const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${theme}${
     <span id="title">trace</span>
     <span class="spacer"></span>
     <label class="ctrl"><input type="checkbox" id="mergeTracks" /> merge tracks by name</label>
+    <label class="ctrl"><input type="checkbox" id="showFlows" checked /> flow arrows</label>
+    <label class="ctrl">color by <select id="colorBy"><option value="cat">cat</option></select></label>
     <input type="text" id="search" placeholder="filter slice name…" />
     <button id="fit">Fit</button>
     <span id="stats"></span>
@@ -75,6 +77,10 @@ await page.evaluate(
     window.dispatchEvent(new MessageEvent("message", { data: { type: "load", fileName, text } })),
   { fileName, text: traceText }
 );
+// ST_COLOR_BY=args.tile renders the shot with a non-default color dimension
+if (process.env.ST_COLOR_BY) {
+  await page.selectOption("#colorBy", process.env.ST_COLOR_BY);
+}
 await page.waitForTimeout(400);
 await page.screenshot({ path: outPng });
 await browser.close();

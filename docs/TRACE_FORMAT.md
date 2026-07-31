@@ -42,12 +42,12 @@ Every element of `traceEvents` is an object. The fields Simple Trace reads:
 | ------ | --------------- | ----------------------------------------------------------------------- |
 | `ph`   | string          | Phase (event type). Determines how the event is handled. See below.     |
 | `name` | string          | Display name of the slice.                                              |
-| `cat`  | string          | Category. Drives slice color and the legend. Optional.                  |
+| `cat`  | string          | Category. The default color dimension; see [Color](#color-and-the-legend). Optional. |
 | `pid`  | number / string | Process id. Groups tracks. Defaults to `0` if omitted.                  |
 | `tid`  | number / string | Thread id. Identifies the track within a process. Defaults to `0`.      |
 | `ts`   | number          | Start timestamp, in microseconds. See [Units](#units).                  |
 | `dur`  | number          | Duration, in microseconds (used by `X` events).                         |
-| `args` | object          | Arbitrary key/value metadata shown in the slice tooltip. Optional.      |
+| `args` | object          | Arbitrary key/value metadata shown in the slice tooltip. Every key is also offered as a color dimension. Optional. |
 
 ## Supported phases (`ph`)
 
@@ -109,7 +109,7 @@ arrow is drawn between each consecutive pair of points in `ts` order.
 | Field | Type            | Meaning                                                                       |
 | ----- | --------------- | ----------------------------------------------------------------------------- |
 | `id`  | number / string | Flow id. Points sharing an `id` (within a `cat`) form one flow. `bind_id` is also accepted. |
-| `cat` | string          | Category. Colors the arrow and appears in the legend; toggle it to hide those arrows. |
+| `cat` | string          | Category. Colors the arrow by default and appears in the legend; toggle it to hide those arrows. |
 | `ts`  | number          | Position of this point in time (microseconds).                                |
 | `pid` / `tid` | number / string | The track the point sits on.                                          |
 
@@ -119,9 +119,10 @@ arrow is drawn between each consecutive pair of points in `ts` order.
   the track's row at that time.
 - Flow ids are scoped by `cat` (the Chrome-trace convention), so different
   categories may reuse the same id.
-- Arrows are colored by `cat` using the same palette as slices, and each flow
-  category is listed in the legend. Hovering a slice highlights the flows that
-  touch it and dims the rest; the slice tooltip shows how many flows it touches.
+- Arrows are colored by the current "color by" property using the same palette as
+  slices — by default `cat`, so each flow category appears in the legend and can
+  be toggled there. Hovering a slice highlights the flows that touch it and dims
+  the rest; the slice tooltip shows how many flows it touches.
 - Use the **flow arrows** toolbar toggle to show/hide all arrows at once.
 
 ```json
@@ -148,13 +149,39 @@ object (`N` / `O` / `D`), and metadata names other than the three listed above.
 - The "merge tracks by name" toggle collapses all tracks that share the same
   `thread_name` (within a process) into a single lane.
 
-## Categories and color
+## Color and the legend
 
-- Each distinct `cat` value gets a color, assigned from a fixed categorical
-  palette in order of first appearance, with a deterministic hashed color once
-  the palette is exhausted.
-- Events without a `cat` are grouped under the category `(none)`.
-- The legend lists every category and lets you toggle each one on or off.
+Slices and flow arrows are colored by **one property at a time**, chosen with
+the "color by" dropdown in the toolbar. The available properties are:
+
+| Option                   | Value used                                                   |
+| ------------------------ | ------------------------------------------------------------ |
+| `cat` (default)          | The event's `cat`.                                           |
+| `name`                   | The event's `name`.                                          |
+| `track`                  | The track's `thread_name`, or `tid N` if it has none.        |
+| `process`                | The process's `process_name`, or `pid N` for a non-zero pid.  |
+| `pid` / `tid`            | The raw ids of the track the event sits on.                   |
+| `args.<key>`             | `args[<key>]`, for every key seen anywhere in the trace.      |
+
+- Each distinct value gets a color, assigned from a fixed categorical palette in
+  order of first appearance, and from generated hues once the palette is
+  exhausted. Colors are stable for a given trace and property.
+- Events that **do not have** the selected property all share one neutral gray
+  default color and are listed in the legend as `(none)`. A property counts as
+  missing when the field is absent, `null`, an empty string, or (for `args`) an
+  object or array rather than a scalar.
+- The legend lists the values of the property currently being colored by, and
+  clicking a value hides or shows the events with that value. Each property
+  remembers its own hidden values. When a property has more than 48 distinct
+  values, the legend shows the 48 most common and notes how many were omitted.
+- A flow takes its color from its **first point** (that point's `cat`, `name`,
+  `args`, and track), so a flow can be colored by the same properties a slice
+  can.
+
+[`examples/example.trace.json`](../examples/example.trace.json) colored by
+`args.tile`, with the `(none)` bucket covering the slices that carry no `tile`:
+
+![The timeline colored by an args key](color_by_args.png)
 
 ## Units
 

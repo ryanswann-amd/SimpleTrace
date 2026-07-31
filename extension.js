@@ -74,6 +74,7 @@ class TraceEditorProvider {
     <span class="spacer"></span>
     <label class="ctrl"><input type="checkbox" id="mergeTracks" /> merge tracks by name</label>
     <label class="ctrl"><input type="checkbox" id="showFlows" checked /> flow arrows</label>
+    <label class="ctrl">color by <select id="colorBy"><option value="cat">cat</option></select></label>
     <input type="text" id="search" placeholder="filter slice name…" />
     <button id="fit">Fit</button>
     <span id="stats"></span>
