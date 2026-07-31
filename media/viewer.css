@@ -19,19 +19,39 @@ html, body {
   font-size: 12px;
 }
 
+/* Column layout: the timeline takes whatever height the toolbar, legend and
+   help bar leave over, so a wrapped toolbar or a tall legend shifts it down
+   instead of being drawn on top of it. */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 #toolbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   padding: 6px 10px;
   background: var(--toolbar-bg);
   border-bottom: 1px solid var(--border);
-  height: 34px;
+  min-height: 34px;
+  flex: 0 0 auto;
 }
 
+/* controls keep their size and wrap as whole units rather than being squeezed
+   or letting their labels break across lines in a narrow editor pane */
+#toolbar > * { flex: 0 0 auto; }
 #toolbar .spacer { flex: 0 0 4px; }
-#toolbar #title { font-weight: 600; }
-#toolbar .ctrl { color: var(--muted); user-select: none; }
+#toolbar #title {
+  font-weight: 600;
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#toolbar .ctrl { color: var(--muted); user-select: none; white-space: nowrap; }
 #toolbar .ctrl.disabled { opacity: 0.4; }
 
 #toolbar input[type="text"] {
@@ -72,9 +92,11 @@ html, body {
   border-bottom: 1px solid var(--border);
   background: var(--toolbar-bg);
   min-height: 24px;
+  flex: 0 0 auto;
   /* the legend can hold many values when coloring by a high-cardinality
-     property; scroll rather than grow behind the fixed-position stage */
-  max-height: 57px;
+     property; let it grow a few rows, then scroll, so it cannot crowd out the
+     timeline itself */
+  max-height: 84px;
   overflow-y: auto;
 }
 #legend .item { display: flex; align-items: center; gap: 5px; cursor: pointer; user-select: none; }
@@ -90,11 +112,9 @@ html, body {
 }
 
 #stage {
-  position: absolute;
-  top: 92px;
-  left: 0;
-  right: 0;
-  bottom: 22px;
+  position: relative; /* containing block for the tooltip */
+  flex: 1 1 auto;
+  min-height: 0;
   overflow: hidden;
 }
 
@@ -121,8 +141,7 @@ html, body {
 #tooltip .t-row b { color: var(--fg); font-weight: 500; }
 
 #help {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
+  flex: 0 0 auto;
   height: 22px;
   line-height: 22px;
   padding: 0 10px;
