@@ -75,6 +75,7 @@ class TraceEditorProvider {
     <label class="ctrl"><input type="checkbox" id="mergeTracks" /> merge tracks by name</label>
     <label class="ctrl"><input type="checkbox" id="showFlows" checked /> flow arrows</label>
     <label class="ctrl">color by <select id="colorBy"><option value="cat">cat</option></select></label>
+    <label class="ctrl" id="heatmapLabel"><input type="checkbox" id="heatmap" /> heatmap</label>
     <input type="text" id="search" placeholder="filter slice name…" />
     <button id="fit">Fit</button>
     <span id="stats"></span>
