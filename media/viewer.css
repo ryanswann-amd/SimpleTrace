@@ -42,6 +42,15 @@ html, body {
   width: 180px;
 }
 
+#toolbar select {
+  background: var(--vscode-dropdown-background, #3c3c3c);
+  color: var(--vscode-dropdown-foreground, #ccc);
+  border: 1px solid var(--vscode-dropdown-border, #555);
+  border-radius: 3px;
+  padding: 2px 4px;
+  max-width: 160px;
+}
+
 #toolbar button {
   background: var(--vscode-button-background, #0e639c);
   color: var(--vscode-button-foreground, #fff);
@@ -62,10 +71,15 @@ html, body {
   border-bottom: 1px solid var(--border);
   background: var(--toolbar-bg);
   min-height: 24px;
+  /* the legend can hold many values when coloring by a high-cardinality
+     property; scroll rather than grow behind the fixed-position stage */
+  max-height: 57px;
+  overflow-y: auto;
 }
 #legend .item { display: flex; align-items: center; gap: 5px; cursor: pointer; user-select: none; }
 #legend .item.disabled { opacity: 0.35; text-decoration: line-through; }
 #legend .swatch { width: 12px; height: 12px; border-radius: 2px; }
+#legend .more { color: var(--muted); font-style: italic; }
 
 #stage {
   position: absolute;

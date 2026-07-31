@@ -32,12 +32,16 @@ code that produced it.
 
 - Interactive canvas timeline with zoom, pan, vertical scroll, and fit-to-view.
 - Tracks grouped by process and ordered by `thread_sort_index`.
-- Slices colored by category (`cat`) with a clickable legend to toggle
-  categories on and off.
+- **Color by any property**: a toolbar dropdown recolors the timeline by `cat`
+  (the default), `name`, `track`, `process`, `pid`, `tid`, or any key found in
+  an event's `args`. Events that lack the selected property fall back to one
+  neutral default color, so "has it" and "doesn't" are visible at a glance.
+- Clickable legend of the values of whatever you are coloring by, to toggle
+  those events on and off. Each color dimension remembers its own toggles.
 - **Flow arrows** (`s`/`t`/`f` events) drawn between slices to show
-  producer→consumer dependencies, colored by category. Hover a slice to
-  spotlight the flows touching it; toggle them off with the "flow arrows"
-  control or per-category in the legend.
+  producer→consumer dependencies, colored by the same property as the slices.
+  Hover a slice to spotlight the flows touching it; toggle them off with the
+  "flow arrows" control or per-value in the legend.
 - Hover or click any slice to see its name, category, track, start time,
   duration, flow count, and all `args`.
 - Slice-name filter box for quickly isolating events.
@@ -47,6 +51,13 @@ code that produced it.
   stacking of nested slices.
 - Zero build step and no runtime dependencies. The extension is plain
   JavaScript.
+
+The same trace colored by `args.tile` instead of by category. Slices that have
+no `tile` arg (here the `inner_mma` slices) keep the neutral default color:
+
+![The timeline colored by an args key](docs/color_by_args.png)
+
+_Regenerate with `ST_COLOR_BY=args.tile node docs/render_screenshot.mjs examples/example.trace.json docs/color_by_args.png`._
 
 ## Controls
 
@@ -132,7 +143,7 @@ microseconds (the Chrome-trace convention). The following event types are used:
 - `M` (metadata): `process_name`, `thread_name`, and `thread_sort_index` set
   track labels and ordering.
 - `s` / `t` / `f` (flow): drawn as arrows between the slices they bind to,
-  colored by `cat`.
+  colored like slices by the current "color by" property.
 
 Other event phases (instant, counter, async, sample, object) are currently
 ignored.
