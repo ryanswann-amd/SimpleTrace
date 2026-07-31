@@ -1176,6 +1176,12 @@
   }
 
   window.addEventListener("resize", resize);
+  // The toolbar wraps and the legend grows or shrinks with what it lists, both
+  // of which resize the stage without a window resize event; re-measure the
+  // canvas whenever the stage's own box changes.
+  if (typeof ResizeObserver === "function") {
+    new ResizeObserver(() => resize()).observe(stage);
+  }
 
   // ---------- message handling ----------
   window.addEventListener("message", (ev) => {
