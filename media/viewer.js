@@ -15,6 +15,8 @@
   const mergeChk = document.getElementById("mergeTracks");
   const flowsChk = document.getElementById("showFlows");
   const colorByEl = document.getElementById("colorBy");
+  const heatChk = document.getElementById("heatmap");
+  const heatLabel = document.getElementById("heatmapLabel");
   const helpEl = document.getElementById("help");
   helpEl.textContent =
     "wheel = scroll up/down · +/− = zoom in/out · ctrl+wheel = zoom · shift+wheel = pan horizontally · drag = pan · double-click = fit";
@@ -34,15 +36,18 @@
   let pinned = null; // clicked slice
   let colorKey = "cat"; // property slices are colored by
   let hiddenByKey = new Map(); // colorKey -> Set of hidden value keys
+  let heatmapByKey = new Map(); // colorKey -> explicit heatmap on/off, if chosen
   let filterText = "";
   let showFlows = true;
 
   // ---------- color by property ----------
   // Slices and flows are colored by one property at a time: a built-in field or
-  // any key seen in an event's `args`. Each distinct value of that property gets
-  // a color from a fixed categorical palette in order of first appearance, and
-  // generated hues once the palette is exhausted. Events that do not carry the
-  // property at all share one neutral default color.
+  // any key seen in an event's `args`. A property whose every value is a number
+  // can be shown as a heatmap — a continuous ramp between its smallest and
+  // largest value — otherwise each distinct value gets a color from a fixed
+  // categorical palette in order of first appearance, and generated hues once
+  // the palette is exhausted. Events that do not carry the property at all share
+  // one neutral default color under either scheme.
   const PALETTE = [
     "#3b76c0", "#e08a1e", "#2f9e6f", "#8e6fbf", "#c0504d",
     "#4bacc6", "#d6a419", "#7f8c8d", "#5b9bd5", "#e06c9f",
@@ -56,6 +61,34 @@
   // happens to be spelled like MISSING_LABEL.
   const MISSING_KEY = "\u0000missing";
   const LEGEND_MAX = 48; // values shown before the legend is truncated
+  // Above this many distinct numeric values the categorical palette stops being
+  // readable, so a heatmap becomes the default for that property.
+  const HEATMAP_AUTO_MIN = 16;
+  // Plain decimal numbers only: hex and other coded strings ("0x1000") are ids
+  // rather than magnitudes, and reading them as numbers would be misleading.
+  const NUM_RE = /^-?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?$/;
+
+  // viridis, sampled at 9 stops and interpolated: perceptually uniform, and its
+  // dark end still separates from the editor background.
+  const RAMP = [
+    [68, 1, 84], [72, 45, 123], [59, 82, 139], [44, 114, 142], [33, 145, 140],
+    [39, 173, 129], [94, 201, 98], [170, 220, 50], [253, 231, 37],
+  ];
+  const RAMP_CSS = RAMP.map(
+    (c, i) => `rgb(${c[0]},${c[1]},${c[2]}) ${((i / (RAMP.length - 1)) * 100).toFixed(1)}%`
+  ).join(", ");
+  function rampColor(t) {
+    if (!(t >= 0)) t = 0;
+    else if (t > 1) t = 1;
+    const x = t * (RAMP.length - 1);
+    const i = Math.min(Math.floor(x), RAMP.length - 2);
+    const f = x - i;
+    const a = RAMP[i];
+    const b = RAMP[i + 1];
+    return `rgb(${Math.round(a[0] + (b[0] - a[0]) * f)},${Math.round(
+      a[1] + (b[1] - a[1]) * f
+    )},${Math.round(a[2] + (b[2] - a[2]) * f)})`;
+  }
 
   // Only primitives make sense as a color dimension; objects, arrays, null and
   // the empty string all count as "does not have this property".
@@ -100,7 +133,17 @@
   function domainFor(key) {
     let d = model.domains.get(key);
     if (d) return d;
-    d = { values: [], index: new Map(), counts: new Map(), colors: new Map(), missing: 0 };
+    d = {
+      values: [],
+      index: new Map(),
+      counts: new Map(),
+      colors: new Map(), // categorical color per value
+      rampColors: new Map(), // heatmap color per value
+      missing: 0,
+      numeric: true, // every value parses as a plain decimal number
+      min: Infinity,
+      max: -Infinity,
+    };
     const tally = (rec) => {
       const v = propValue(rec, key);
       if (v == null) {
@@ -112,19 +155,47 @@
         d.index.set(v, d.values.length);
         d.values.push(v);
         d.counts.set(v, 1);
+        if (d.numeric && NUM_RE.test(v)) {
+          const num = Number(v);
+          if (num < d.min) d.min = num;
+          if (num > d.max) d.max = num;
+        } else {
+          d.numeric = false;
+        }
       } else {
         d.counts.set(v, n + 1);
       }
     };
     for (const t of model.tracks) for (const s of t.slices) tally(s);
     for (const fl of model.flows) tally(fl);
+    if (!d.values.length) d.numeric = false;
     model.domains.set(key, d);
     return d;
+  }
+
+  // A heatmap is offered for any all-numeric property, and is the default once
+  // the property has more distinct values than the palette can distinguish.
+  // An explicit choice from the toolbar wins for that property.
+  function heatmapOn() {
+    const d = domainFor(colorKey);
+    if (!d.numeric) return false;
+    const chosen = heatmapByKey.get(colorKey);
+    if (chosen != null) return chosen;
+    return d.values.length > HEATMAP_AUTO_MIN;
   }
 
   function colorForValue(v) {
     if (v == null) return DEFAULT_COLOR;
     const d = domainFor(colorKey);
+    if (heatmapOn()) {
+      const hit = d.rampColors.get(v);
+      if (hit) return hit;
+      // a single distinct value has no range to speak of; put it mid-ramp
+      const t = d.max > d.min ? (Number(v) - d.min) / (d.max - d.min) : 0.5;
+      const color = rampColor(t);
+      d.rampColors.set(v, color);
+      return color;
+    }
     const cached = d.colors.get(v);
     if (cached) return cached;
     let i = d.index.get(v);
@@ -155,6 +226,16 @@
       hiddenByKey.set(colorKey, s);
     }
     return s;
+  }
+
+  // A heatmap legend has no per-value chips, so only the missing bucket stays
+  // toggleable there; values hidden while in categorical mode must not keep
+  // hiding events that the legend can no longer bring back.
+  const NOTHING_HIDDEN = new Set();
+  function activeHiddenSet() {
+    const s = hiddenSet();
+    if (!s.size || !heatmapOn()) return s;
+    return s.has(MISSING_KEY) ? new Set([MISSING_KEY]) : NOTHING_HIDDEN;
   }
 
   // ---------- time formatting (raw values assumed microseconds) ----------
@@ -556,7 +637,7 @@
 
     // slices
     const filter = filterText.toLowerCase();
-    const hidden = hiddenSet();
+    const hidden = activeHiddenSet();
     hover = null;
     const minVisT = view.start;
     const maxVisT = xToTime(W);
@@ -690,7 +771,7 @@
     if (!showFlows || !model.flows || !model.flows.length) return;
     const hi = pinned || pendingHover;
     const hiSlice = hi ? hi.slice : null;
-    const hidden = hiddenSet();
+    const hidden = activeHiddenSet();
     for (const fl of model.flows) {
       const colorVal = propValue(fl, colorKey);
       if (hidden.has(valueKey(colorVal))) continue;
@@ -744,7 +825,7 @@
     const contentTop = RULER_H;
     if (px < GUTTER || py < contentTop) return null;
     const filter = filterText.toLowerCase();
-    const hidden = hiddenSet();
+    const hidden = activeHiddenSet();
     for (const row of layout.rows) {
       if (row.type !== "track") continue;
       const rowTop = contentTop + row.y - view.scrollY;
@@ -835,9 +916,76 @@
     colorByEl.value = colorKey;
   }
 
+  // ---------- heatmap toggle ----------
+  function syncHeatmapControl(d) {
+    if (!heatChk) return;
+    heatChk.disabled = !d.numeric;
+    heatChk.checked = d.numeric && heatmapOn();
+    if (heatLabel) {
+      heatLabel.className = "ctrl" + (d.numeric ? "" : " disabled");
+      heatLabel.title = d.numeric
+        ? `ramp the color with the value of ${colorKey} (${fmtNum(d.min)} … ${fmtNum(d.max)})`
+        : `${colorKey} is not numeric, so it has no range to ramp over`;
+    }
+  }
+
   // ---------- legend ----------
   function compareValues(a, b) {
     return a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" });
+  }
+
+  function fmtNum(x) {
+    if (!isFinite(x)) return String(x);
+    if (Number.isInteger(x)) return x.toLocaleString();
+    const a = Math.abs(x);
+    if (a >= 1e9 || a < 1e-3) return x.toExponential(2);
+    return x.toLocaleString(undefined, { maximumFractionDigits: 3 });
+  }
+
+  // one clickable legend chip: a swatch, a label, and a click that hides or
+  // shows the events with that value
+  function legendChip(label, value, n, hidden) {
+    const key = valueKey(value);
+    const item = document.createElement("div");
+    item.className = "item" + (hidden.has(key) ? " disabled" : "");
+    item.title = `${label} — ${n.toLocaleString()} events (click to toggle)`;
+    const sw = document.createElement("span");
+    sw.className = "swatch";
+    sw.style.background = colorForValue(value);
+    const text = document.createElement("span");
+    text.textContent = label;
+    item.appendChild(sw);
+    item.appendChild(text);
+    item.onclick = () => {
+      if (hidden.has(key)) hidden.delete(key);
+      else hidden.add(key);
+      buildLegend();
+      draw();
+    };
+    return item;
+  }
+
+  // A heatmap has no discrete values to list, so the legend becomes a color bar
+  // annotated with the range it spans.
+  function buildHeatmapLegend(d, hidden) {
+    const scale = document.createElement("div");
+    scale.className = "scale";
+    scale.title = `${colorKey}: ${d.values.length.toLocaleString()} distinct values from ${fmtNum(
+      d.min
+    )} to ${fmtNum(d.max)}`;
+    const lo = document.createElement("span");
+    lo.textContent = fmtNum(d.min);
+    const bar = document.createElement("span");
+    bar.className = "gradient";
+    bar.style.background = `linear-gradient(to right, ${RAMP_CSS})`;
+    const hi = document.createElement("span");
+    hi.textContent = fmtNum(d.max);
+    scale.appendChild(lo);
+    scale.appendChild(bar);
+    scale.appendChild(hi);
+    legendEl.appendChild(scale);
+    if (d.missing)
+      legendEl.appendChild(legendChip(MISSING_LABEL, null, d.missing, hidden));
   }
 
   function buildLegend() {
@@ -845,6 +993,11 @@
     if (!model) return;
     const d = domainFor(colorKey);
     const hidden = hiddenSet();
+    syncHeatmapControl(d);
+    if (heatmapOn()) {
+      buildHeatmapLegend(d, hidden);
+      return;
+    }
     let values = d.values.slice();
     let truncated = 0;
     // a high-cardinality property (a name or an id) can have thousands of
@@ -860,26 +1013,8 @@
     if (d.missing)
       entries.push({ label: MISSING_LABEL, value: null, n: d.missing });
 
-    for (const e of entries) {
-      const key = valueKey(e.value);
-      const item = document.createElement("div");
-      item.className = "item" + (hidden.has(key) ? " disabled" : "");
-      item.title = `${e.label} — ${e.n.toLocaleString()} events (click to toggle)`;
-      const sw = document.createElement("span");
-      sw.className = "swatch";
-      sw.style.background = colorForValue(e.value);
-      const label = document.createElement("span");
-      label.textContent = e.label;
-      item.appendChild(sw);
-      item.appendChild(label);
-      item.onclick = () => {
-        if (hidden.has(key)) hidden.delete(key);
-        else hidden.add(key);
-        buildLegend();
-        draw();
-      };
-      legendEl.appendChild(item);
-    }
+    for (const e of entries)
+      legendEl.appendChild(legendChip(e.label, e.value, e.n, hidden));
     if (truncated) {
       const more = document.createElement("div");
       more.className = "more";
@@ -1001,6 +1136,12 @@
       buildLegend();
       draw();
     });
+  if (heatChk)
+    heatChk.addEventListener("change", () => {
+      heatmapByKey.set(colorKey, heatChk.checked);
+      buildLegend();
+      draw();
+    });
 
   window.addEventListener("keydown", (e) => {
     if (!model) return;
@@ -1051,6 +1192,7 @@
       }
       invalidateRows();
       hiddenByKey = new Map();
+      heatmapByKey = new Map();
       pinned = null;
       buildColorByOptions();
       buildLegend();

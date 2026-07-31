@@ -32,6 +32,7 @@ html, body {
 #toolbar .spacer { flex: 0 0 4px; }
 #toolbar #title { font-weight: 600; }
 #toolbar .ctrl { color: var(--muted); user-select: none; }
+#toolbar .ctrl.disabled { opacity: 0.4; }
 
 #toolbar input[type="text"] {
   background: var(--vscode-input-background, #3c3c3c);
@@ -80,6 +81,13 @@ html, body {
 #legend .item.disabled { opacity: 0.35; text-decoration: line-through; }
 #legend .swatch { width: 12px; height: 12px; border-radius: 2px; }
 #legend .more { color: var(--muted); font-style: italic; }
+#legend .scale { display: flex; align-items: center; gap: 6px; color: var(--muted); }
+#legend .gradient {
+  width: 200px;
+  height: 12px;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+}
 
 #stage {
   position: absolute;

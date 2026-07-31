@@ -36,6 +36,11 @@ code that produced it.
   (the default), `name`, `track`, `process`, `pid`, `tid`, or any key found in
   an event's `args`. Events that lack the selected property fall back to one
   neutral default color, so "has it" and "doesn't" are visible at a glance.
+- **Numeric heatmap**: when the selected property is a number, the color becomes
+  a continuous viridis ramp between its smallest and largest value, with a color
+  bar in place of the legend. This is the default once a numeric property has
+  more distinct values than the categorical palette can distinguish, and the
+  "heatmap" toggle forces it either way.
 - Clickable legend of the values of whatever you are coloring by, to toggle
   those events on and off. Each color dimension remembers its own toggles.
 - **Flow arrows** (`s`/`t`/`f` events) drawn between slices to show
@@ -57,7 +62,13 @@ no `tile` arg (here the `inner_mma` slices) keep the neutral default color:
 
 ![The timeline colored by an args key](docs/color_by_args.png)
 
-_Regenerate with `ST_COLOR_BY=args.tile node docs/render_screenshot.mjs examples/example.trace.json docs/color_by_args.png`._
+`tile` is a number, so the same property can be shown as a heatmap: one color
+bar from `0` to `39` instead of forty swatches, and the progression through tiles
+becomes visible at a glance:
+
+![The timeline heatmapped by a numeric args key](docs/heatmap_args.png)
+
+_Regenerate with `ST_COLOR_BY=args.tile [ST_HEATMAP=0|1] node docs/render_screenshot.mjs examples/example.trace.json out.png`._
 
 ## Controls
 

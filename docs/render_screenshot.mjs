@@ -47,6 +47,7 @@ const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${theme}${
     <label class="ctrl"><input type="checkbox" id="mergeTracks" /> merge tracks by name</label>
     <label class="ctrl"><input type="checkbox" id="showFlows" checked /> flow arrows</label>
     <label class="ctrl">color by <select id="colorBy"><option value="cat">cat</option></select></label>
+    <label class="ctrl" id="heatmapLabel"><input type="checkbox" id="heatmap" /> heatmap</label>
     <input type="text" id="search" placeholder="filter slice name…" />
     <button id="fit">Fit</button>
     <span id="stats"></span>
@@ -77,9 +78,13 @@ await page.evaluate(
     window.dispatchEvent(new MessageEvent("message", { data: { type: "load", fileName, text } })),
   { fileName, text: traceText }
 );
-// ST_COLOR_BY=args.tile renders the shot with a non-default color dimension
+// ST_COLOR_BY=args.tile renders the shot with a non-default color dimension,
+// ST_HEATMAP=1/0 forces the numeric heatmap on or off for it
 if (process.env.ST_COLOR_BY) {
   await page.selectOption("#colorBy", process.env.ST_COLOR_BY);
+}
+if (process.env.ST_HEATMAP) {
+  await page.setChecked("#heatmap", process.env.ST_HEATMAP !== "0");
 }
 await page.waitForTimeout(400);
 await page.screenshot({ path: outPng });

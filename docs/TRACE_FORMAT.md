@@ -163,25 +163,59 @@ the "color by" dropdown in the toolbar. The available properties are:
 | `pid` / `tid`            | The raw ids of the track the event sits on.                   |
 | `args.<key>`             | `args[<key>]`, for every key seen anywhere in the trace.      |
 
+Two things hold whichever property you pick:
+
+- Events that **do not have** the selected property all share one neutral gray
+  default color and are listed in the legend as `(none)`, which stays clickable
+  to hide them. A property counts as missing when the field is absent, `null`, an
+  empty string, or (for `args`) an object or array rather than a scalar.
+- A flow takes its color from its **first point** (that point's `cat`, `name`,
+  `args`, and track), so a flow can be colored by the same properties a slice
+  can.
+
+### Categorical coloring
+
+Used for any property that is not entirely numeric.
+
 - Each distinct value gets a color, assigned from a fixed categorical palette in
   order of first appearance, and from generated hues once the palette is
   exhausted. Colors are stable for a given trace and property.
-- Events that **do not have** the selected property all share one neutral gray
-  default color and are listed in the legend as `(none)`. A property counts as
-  missing when the field is absent, `null`, an empty string, or (for `args`) an
-  object or array rather than a scalar.
 - The legend lists the values of the property currently being colored by, and
   clicking a value hides or shows the events with that value. Each property
   remembers its own hidden values. When a property has more than 48 distinct
   values, the legend shows the 48 most common and notes how many were omitted.
-- A flow takes its color from its **first point** (that point's `cat`, `name`,
-  `args`, and track), so a flow can be colored by the same properties a slice
-  can.
 
 [`examples/example.trace.json`](../examples/example.trace.json) colored by
 `args.tile`, with the `(none)` bucket covering the slices that carry no `tile`:
 
 ![The timeline colored by an args key](color_by_args.png)
+
+### Numeric heatmap
+
+When **every** value of the selected property is a number, the color can instead
+ramp continuously with the value, which suits magnitudes (a size, a duration, a
+queue depth) and ordered indices (an iteration or wave id) far better than
+unrelated categorical colors.
+
+- The ramp is [viridis](https://bids.github.io/colormap/), stretched linearly
+  from the property's smallest value to its largest. The legend becomes a color
+  bar labelled with those two bounds.
+- A heatmap is the **default** once a numeric property has more than 16 distinct
+  values, the point past which the categorical palette stops being readable.
+  Below that, categorical coloring is the default. The **heatmap** checkbox in
+  the toolbar forces it on or off per property, and is disabled for properties
+  that are not numeric.
+- Only plain decimal numbers count, including negatives and exponent notation
+  (`-3`, `0.5`, `1e6`). Coded strings such as `"0x1000"` are treated as
+  identifiers, not magnitudes, so they stay categorical. A single non-numeric
+  value anywhere in the trace disqualifies the property.
+- If a property has just one distinct value, it is drawn at the middle of the
+  ramp rather than at an arbitrary end.
+
+The same `args.tile` property as a heatmap — one bar from `0` to `39` instead of
+forty swatches, so the sweep through tiles is visible directly:
+
+![The timeline heatmapped by a numeric args key](heatmap_args.png)
 
 ## Units
 
