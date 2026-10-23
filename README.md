@@ -6,7 +6,7 @@ browser, no uploading your traces to `ui.perfetto.dev`.
 
 ## Quick start
 
-Install the latest release into Cursor (or VSCode), then run
+Install the latest release into VSCode or Cursor, then run
 "Developer: Reload Window":
 
 ```bash
@@ -89,7 +89,7 @@ _Regenerate with `ST_COLOR_BY=args.tile [ST_HEATMAP=0|1] node docs/render_screen
 
 ### One-line install from GitHub Releases
 
-Downloads the latest released `.vsix` and installs it into Cursor (or VSCode):
+Downloads the latest released `.vsix` and installs it into VSCode or Cursor:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/ryanswann-amd/SimpleTrace/main/install.sh | bash
@@ -102,8 +102,15 @@ Clone and run the script directly to pick a specific version:
 ./install.sh v0.1.0   # specific tag
 ```
 
-Set `EDITOR_CMD=code` to target VSCode explicitly, or `REPO=owner/fork` to
-install from a fork. After installing, run "Developer: Reload Window".
+The script installs into whichever editor's integrated terminal you run it
+from, including over Remote-SSH. Outside an editor terminal it uses the first
+working `cursor` or `code` CLI on `PATH`, and on a Remote-SSH host with neither
+(say, inside tmux) it installs through the newest `~/.vscode-server` or
+`~/.cursor-server` binary, so the extension is there the next time you connect.
+
+Set `EDITOR_CMD` to override the choice (`EDITOR_CMD=code`, `EDITOR_CMD=cursor`,
+`EDITOR_CMD=code-insiders`, ...), or `REPO=owner/fork` to install from a fork.
+After installing, run "Developer: Reload Window".
 
 ### Download and install the latest .vsix directly
 
